@@ -1,0 +1,305 @@
+.service-header {
+	position: relative;
+
+	@include adaptiveValue('padding-top', 120, 100);
+	@include adaptiveValue('padding-bottom', 100, 50);
+	// .service-header__background
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		z-index: -1;
+	}
+	// .service-header__breadcrumb
+	&__breadcrumb {
+		@include adaptiveValue('margin-bottom', 60, 30);
+	}
+	// .service-header__title
+	&__title {
+		font-family: 'DIN Next Shapes Dots', sans-serif;
+		line-height: 98%;
+		text-transform: uppercase;
+		color: $accentColor;
+		margin-bottom: rem(6);
+
+		@include adaptiveValue('font-size', 100, 50);
+	}
+	// .service-header__text
+	&__text {
+		@include adaptiveValue('max-width', 550, 350);
+		p {
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 120%;
+			color: $whiteColor;
+
+			@include adaptiveValue('font-size', 18, 14);
+
+			&:not(:last-child) {
+				@include adaptiveValue('margin-bottom', 20, 10);
+			}
+		}
+
+		a {
+			color: $accentColor;
+			transition: color 0.3s ease-in-out;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $hoverColor;
+				}
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+.service-parts {
+	position: relative;
+	@include adaptiveValue('padding-top', 100, 50);
+	@include adaptiveValue('padding-bottom', 100, 50);
+
+	&__decor {
+		position: absolute;
+		top: 200px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	// .service-parts__container
+	&__container {
+		@media (max-width: em(550)) {
+			padding: 0;
+		}
+	}
+	// .service-parts__title
+	&__title {
+		@include adaptiveValue('margin-bottom', 50, 25);
+
+		@media (max-width: em(550)) {
+			padding: 0 rem(20);
+		}
+	}
+}
+
+.service-body {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	@include adaptiveValue('gap', 55, 25);
+
+	@media (max-width: 991px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 550px) {
+		display: flex;
+		overflow-y: auto;
+		padding: 0 rem(20);
+		padding-bottom: rem(15);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
+.service-card {
+	display: flex;
+	flex-direction: column;
+	background-color: $whiteColor;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+	border-radius: rem(5);
+	overflow: hidden;
+	transition: box-shadow 0.3s ease-in-out;
+
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+		}
+	}
+
+	@media (max-width: 550px) {
+		flex: 0 0 80%;
+	}
+	// .service-card__image
+	&__image {
+		position: relative;
+		padding-bottom: 56.5%;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	// .service-card__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 100%;
+
+		@include adaptiveValue('padding-top', 20, 15);
+		@include adaptiveValue('padding-bottom', 35, 20);
+		@include adaptiveValue('padding-left', 30, 20);
+		@include adaptiveValue('padding-right', 30, 20);
+	}
+	// .service-card__title
+	&__title {
+		padding-top: rem(15);
+		border-top: 1px solid $accentColor;
+		font-weight: 500;
+		font-size: 23px;
+		line-height: 120%;
+		margin-bottom: rem(10);
+		align-self: stretch;
+
+		@include adaptiveValue('font-size', 23, 16);
+	}
+	// .service-card__description
+	&__description {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 135%;
+		margin-bottom: rem(20);
+
+		@include adaptiveValue('font-size', 16, 12);
+	}
+	// .service-card__link
+	&__link {
+		margin-top: auto;
+	}
+}
+//========================================================================================================================================================
+.service-liquids {
+	@include adaptiveValue('padding-bottom', 100, 50);
+	// .service-liquids__container
+	&__container {
+		@media (max-width: em(550)) {
+			padding: 0;
+		}
+	}
+	// .service-liquids__title
+	&__title {
+		@include adaptiveValue('margin-bottom', 50, 25);
+
+		@media (max-width: em(550)) {
+			padding: 0 rem(20);
+		}
+	}
+}
+//========================================================================================================================================================
+.service-software {
+	@include adaptiveValue('padding-bottom', 100, 50);
+	// .service-software__container
+	&__container {
+		@media (max-width: em(550)) {
+			padding: 0;
+		}
+	}
+	// .service-software__title
+	&__title {
+		@include adaptiveValue('margin-bottom', 50, 25);
+
+		@media (max-width: em(550)) {
+			padding: 0 rem(20);
+		}
+	}
+}
+//========================================================================================================================================================
+.programm {
+	@include adaptiveValue('padding-top', 120, 100);
+	@include adaptiveValue('padding-bottom', 100, 50);
+	// .programm__decor
+	&__decor {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	// .programm__container
+	&__container {
+		position: relative;
+	}
+	// .programm__breadcrumb
+	&__breadcrumb {
+		@include adaptiveValue('margin-bottom', 60, 30);
+	}
+	// .programm__title
+	&__title {
+		font-family: 'DIN Next Shapes Dots', sans-serif;
+		position: relative;
+		line-height: 98%;
+		text-transform: uppercase;
+		color: $accentColor;
+
+		@include adaptiveValue('margin-bottom', 20, 0);
+		@include adaptiveValue('font-size', 55, 30);
+	}
+	// .programm__content
+	&__content {
+		max-width: rem(900);
+		position: relative;
+
+		@include adaptiveValue('margin-bottom', 50, 25);
+	}
+	// .programm__file
+	&__file {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		transition: color 0.3s ease-in-out;
+		font-weight: 500;
+		line-height: 125%;
+
+		@include adaptiveValue('font-size', 18, 14);
+
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 15, 10);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+.service-caution {
+	display: flex;
+	justify-content: center;
+
+	@include adaptiveValue('margin-bottom', 100, 50);
+	@include adaptiveValue('margin-top', -30, -15);
+	&__content {
+		line-height: 145%;
+		text-align: center;
+		max-width: rem(625);
+		background: #cce4f2;
+		border-radius: 5px;
+
+		@include adaptiveValue('font-size', 14, 11);
+		@include adaptiveValue('padding-top', 15, 10);
+		@include adaptiveValue('padding-bottom', 15, 10);
+		@include adaptiveValue('padding-left', 25, 10);
+		@include adaptiveValue('padding-right', 25, 10);
+
+		a {
+			color: $accentColor;
+			text-decoration: underline;
+			text-underline-offset: rem(3);
+			transition: color 0.3s ease-in-out;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $hoverColor;
+				}
+			}
+		}
+	}
+}

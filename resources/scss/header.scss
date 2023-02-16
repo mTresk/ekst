@@ -1,0 +1,256 @@
+.header {
+	position: fixed;
+	width: 100%;
+	padding: rem(15) 0;
+	color: $whiteColor;
+	z-index: 100;
+
+	.light & {
+		color: $mainColor;
+	}
+
+	&::before {
+		position: absolute;
+		inset: 0;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-color: $mainColor;
+		z-index: 5;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.menu-open & {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&._header-scroll {
+		color: $whiteColor;
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	// .header__body
+	&__body {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .header__logo
+	&__logo {
+		z-index: 5;
+		svg {
+			max-width: rem(220);
+			transition: max-width 0.3s ease-in-out;
+			height: auto;
+
+			.light & {
+				.white {
+					transition: fill 0.3s ease-in-out;
+					fill: $mainColor;
+				}
+			}
+
+			._header-scroll & {
+				max-width: rem(150);
+
+				.white {
+					fill: $whiteColor;
+				}
+			}
+
+			.menu-open & {
+				.white {
+					fill: $whiteColor;
+				}
+			}
+
+			@include adaptiveValue('max-width', 220, 150, 0, 1440, 767);
+		}
+	}
+	// .header__content
+	&__content {
+		display: flex;
+		align-items: center;
+		gap: rem(25);
+	}
+	// .header__socials
+	&__socials {
+		display: none;
+
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: rem(15);
+			margin-top: rem(25);
+		}
+	}
+	// .header__phone
+	&__phone {
+		font-size: 18px;
+		line-height: 120%;
+		text-decoration: underline;
+		text-underline-offset: rem(4);
+		transition: color 0.3s ease-in-out 0s;
+		z-index: 5;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+
+		@media (max-width: em(1100)) {
+			display: none;
+		}
+
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+			padding-top: rem(30);
+			margin-top: rem(30);
+			font-size: rem(25);
+			text-underline-offset: rem(6);
+			border-top: 1px solid rgba(255, 255, 255, 0.7);
+			text-decoration: none;
+			color: $whiteColor;
+		}
+	}
+}
+.menu {
+	display: flex;
+	align-items: center;
+	// .menu__body
+	&__body {
+		z-index: 5;
+		@media (max-width: $mobile) {
+			padding-left: rem(20);
+			padding-right: rem(20);
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			inset: 0;
+			background-color: $accentColor;
+			padding-top: rem(130);
+			padding-bottom: rem(40);
+			transform: translateY(-100%);
+			transition: transform 0.5s ease-in-out;
+			overflow-y: auto;
+			z-index: 1;
+
+			.menu-open & {
+				transform: translateY(0%);
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: rem(25);
+
+		@include adaptiveValue('gap', 25, 15, 0, 1440, 767);
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+	// .menu__link
+	&__link {
+		position: relative;
+		line-height: 120%;
+		transition: color 0.3s ease-in-out;
+
+		@include adaptiveValue('font-size', 18, 14, 0, 1440, 767);
+
+		@media (max-width: $mobile) {
+			font-size: rem(25) !important;
+			color: $whiteColor;
+		}
+
+		&::after {
+			position: absolute;
+			bottom: rem(-8);
+			left: 50%;
+			display: block;
+			width: 0;
+			height: rem(3);
+			content: '';
+			background: $accentColor;
+			transition: width 0.3s ease-in-out 0s, left 0.5s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					left: 0;
+					width: 45%;
+				}
+			}
+		}
+	}
+}
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: '';
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: $whiteColor;
+
+			.light & {
+				background-color: $mainColor;
+			}
+
+			._header-scroll & {
+				background-color: $whiteColor;
+			}
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+				background-color: $whiteColor;
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+				background-color: $whiteColor;
+			}
+		}
+	}
+}

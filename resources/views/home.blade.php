@@ -507,75 +507,40 @@
                     <div class="title-h2__content">Последнее <br/>из <span>блога</span></div>
                 </h2>
                 <div class="blog-latest__body">
-                    <article animate class="blog-latest__item blog-item">
-                        <div class="blog-item__badge">Статьи</div>
-                        <div class="blog-item__image">
-                            <picture>
-                                <source srcset="img/blog/1.webp" type="image/webp">
-                                <img src="img/blog/1.jpg" alt=""/></picture>
-                        </div>
-                        <div class="blog-item__content">
-                            <div class="blog-item__date">22.02.2023</div>
-                            <h3 class="blog-item__title">
-                                Особенности и назначение ручных и промышленных маркираторов
-                            </h3>
-                            <a href="/post.html" class="blog-item__link link link--light">
-                                <span>Читать полностью</span>
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.53033 6.53033C6.82322 6.23744 6.82322 5.76256 6.53033 5.46967L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989593 0.403806 1.46447 0.696699 1.75736L4.93934 6L0.696699 10.2426C0.403806 10.5355 0.403806 11.0104 0.696699 11.3033C0.989593 11.5962 1.46447 11.5962 1.75736 11.3033L6.53033 6.53033ZM5 6.75H6V5.25H5V6.75Z"
-                                        fill="#0077BD"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-                    <article animate class="blog-latest__item blog-item">
-                        <div class="blog-item__badge">Новости</div>
-                        <div class="blog-item__image">
-                            <picture>
-                                <source srcset="img/blog/2.webp" type="image/webp">
-                                <img src="img/blog/2.jpg" alt=""/></picture>
-                        </div>
-                        <div class="blog-item__content">
-                            <div class="blog-item__date">04.02.2023</div>
-                            <h3 class="blog-item__title">
-                                Каплеструйные маркираторы для промышленной маркировки удобны
-                            </h3>
-                            <a href="/post.html" class="blog-item__link link link--light">
-                                <span>Читать полностью</span>
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.53033 6.53033C6.82322 6.23744 6.82322 5.76256 6.53033 5.46967L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989593 0.403806 1.46447 0.696699 1.75736L4.93934 6L0.696699 10.2426C0.403806 10.5355 0.403806 11.0104 0.696699 11.3033C0.989593 11.5962 1.46447 11.5962 1.75736 11.3033L6.53033 6.53033ZM5 6.75H6V5.25H5V6.75Z"
-                                        fill="#0077BD"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-                    <article animate class="blog-latest__item blog-item">
-                        <div class="blog-item__badge">Статьи</div>
-                        <div class="blog-item__image">
-                            <picture>
-                                <source srcset="img/blog/3.webp" type="image/webp">
-                                <img src="img/blog/3.jpg" alt=""/></picture>
-                        </div>
-                        <div class="blog-item__content">
-                            <div class="blog-item__date">21.01.2023</div>
-                            <h3 class="blog-item__title">Для чего применяется маркировка в промышленности?</h3>
-                            <a href="/post.html" class="blog-item__link link link--light">
-                                <span>Читать полностью</span>
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.53033 6.53033C6.82322 6.23744 6.82322 5.76256 6.53033 5.46967L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989593 0.403806 1.46447 0.696699 1.75736L4.93934 6L0.696699 10.2426C0.403806 10.5355 0.403806 11.0104 0.696699 11.3033C0.989593 11.5962 1.46447 11.5962 1.75736 11.3033L6.53033 6.53033ZM5 6.75H6V5.25H5V6.75Z"
-                                        fill="#0077BD"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
+                    @foreach($articles as $article)
+                        <article animate class="blog-latest__item blog-item">
+                            <div class="blog-item__badge">{{ $article->category->name }}</div>
+                            <div class="blog-item__image">
+                                <picture>
+                                    <source
+                                        srcset="{{ $article->getFirstMedia('articles')->getUrl('articleThumbWebp') }} 1x, {{ $article->getFirstMedia('articles')->getUrl('articleThumbWebp@2') }} 2x"
+                                        type="image/webp">
+                                    <img
+                                        src="{{ $article->getFirstMedia('articles')->getUrl('articleThumb') }}"
+                                        srcset="{{ $article->getFirstMedia('articles')->getUrl('articleThumb@2') }} 1x, {{ $article->getFirstMedia('articles')->getUrl('articleThumb@2') }} 2x"
+                                        alt="{{ $article->title }}"/></picture>
+                            </div>
+                            <div class="blog-item__content">
+                                <div
+                                    class="blog-item__date">{{ \Carbon\Carbon::parse($article->published_at)->format('d.m.Y') }}</div>
+                                <h3 class="blog-item__title">
+                                    {{ $article->title }}
+                                </h3>
+                                <a href="{{ route('blog.show', $article->slug) }}"
+                                   class="blog-item__link link link--light">
+                                    <span>Читать полностью</span>
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.53033 6.53033C6.82322 6.23744 6.82322 5.76256 6.53033 5.46967L1.75736 0.696699C1.46447 0.403806 0.989593 0.403806 0.696699 0.696699C0.403806 0.989593 0.403806 1.46447 0.696699 1.75736L4.93934 6L0.696699 10.2426C0.403806 10.5355 0.403806 11.0104 0.696699 11.3033C0.989593 11.5962 1.46447 11.5962 1.75736 11.3033L6.53033 6.53033ZM5 6.75H6V5.25H5V6.75Z"
+                                            fill="#0077BD"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    @endforeach
                 </div>
-                <a animate href="/blog.html" class="blog-latest__link link">
+                <a animate href="{{ route('blog.index') }}" class="blog-latest__link link">
                     <span>Все статьи</span>
                     <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

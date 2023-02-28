@@ -20,6 +20,7 @@
 
 </div>
 @include('layout.modal')
+@stack('script')
 </body>
 
 </html>

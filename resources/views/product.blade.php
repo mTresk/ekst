@@ -99,7 +99,6 @@
                                 <div class="product-content__sliders">
                                     <div class="product-content__slider swiper">
                                         <div class="product-content__wrapper swiper-wrapper">
-
                                             @foreach($product->getMedia('sliders') as $slide)
                                                 <div class="product-content__slide swiper-slide">
                                                     <picture>
@@ -111,7 +110,6 @@
                                                              alt="{{ $product->name }}"/></picture>
                                                 </div>
                                             @endforeach
-
                                         </div>
                                     </div>
                                     <div class="product-content__thumbs thumbs">

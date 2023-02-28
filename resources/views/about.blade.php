@@ -274,56 +274,17 @@
                 <div class="testimonials__body">
                     <div class="testimonials__slider swiper">
                         <div class="testimonials__wrapper swiper-wrapper">
-                            <div animate class="testimonials__slide swiper-slide testimonial">
-                                <div class="testimonial__name">ООО «БРЭКС»</div>
-                                <div class="testimonial__date">от 04.09.2021</div>
-                                <p class="testimonial__text">
-                                    ООО «БРЭКС» уже порядка 20-и лет успешно сотрудничает с Институтом ЭКСТ по
-                                    закупке принтеров, расходных материалов и запчастей. Специалисты Института
-                                    ЭКСТ всегда готовы оказать необходимую помощь, провести консультацию по всем
-                                    необходимым вопросам, оказать техническую поддержку. Также хотим отметить,
-                                    что сотрудники компании всегда оперативны в обработке заявок, внимательны к
-                                    требованиям и всегда нацелены на результат. В случае появления новых
-                                    потребностей в области маркировки мы однозначно обратимся именно к этой
-                                    организации.
-                                </p>
-                            </div>
-                            <div animate class="testimonials__slide swiper-slide testimonial">
-                                <div class="testimonial__name">СМУ-22»</div>
-                                <div class="testimonial__date">от 04.09.2021</div>
-                                <p class="testimonial__text">
-                                    Компания СМУ-22 благодарит компанию Институт ЭКСТ за производство и
-                                    установку маркиратора для нашей продукции. Организация Институт ЭКСТ
-                                    зарекомендовала как ответственный подрядчик, способный работать качественно,
-                                    в срок, без нарушения договорных обязательств.
-                                </p>
-                            </div>
-                            <div animate class="testimonials__slide swiper-slide testimonial">
-                                <div class="testimonial__name">ООО «Пискаревский молзавод»»</div>
-                                <div class="testimonial__date">от 18.10.2022</div>
-                                <p class="testimonial__text">
-                                    ООО «Пискаревский молзавод» уже много лет успешно сотрудничает с Институтом
-                                    ЭКСТ по закупке принтеров, расходных материалов и запчастей. Специалисты
-                                    Института ЭКСТ всегда готовы оказать необходимую помощь, провести
-                                    консультацию по всем необходимым вопросам, оказать техническую поддержку.
-                                    Также хотим отметить, что сотрудники компании всегда оперативны в обработке
-                                    заявок, внимательны к требованиям и всегда нацелены на результат.
-                                </p>
-                            </div>
-                            <div animate class="testimonials__slide swiper-slide testimonial">
-                                <div class="testimonial__name">ООО «БРЭКС»</div>
-                                <div class="testimonial__date">от 04.09.2021</div>
-                                <p class="testimonial__text">
-                                    ООО «БРЭКС» уже порядка 20-и лет успешно сотрудничает с Институтом ЭКСТ по
-                                    закупке принтеров, расходных материалов и запчастей. Специалисты Института
-                                    ЭКСТ всегда готовы оказать необходимую помощь, провести консультацию по всем
-                                    необходимым вопросам, оказать техническую поддержку. Также хотим отметить,
-                                    что сотрудники компании всегда оперативны в обработке заявок, внимательны к
-                                    требованиям и всегда нацелены на результат. В случае появления новых
-                                    потребностей в области маркировки мы однозначно обратимся именно к этой
-                                    организации.
-                                </p>
-                            </div>
+                            @foreach($reviews as $review)
+                                <div animate class="testimonials__slide swiper-slide testimonial">
+                                    <div class="testimonial__name">{{ $review->name }}</div>
+                                    <div
+                                        class="testimonial__date">
+                                        от {{ \Carbon\Carbon::parse($review->created_at)->format('d.m.Y') }}</div>
+                                    <p class="testimonial__text">
+                                        {{ $review->text }}
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="testimonials__footer">
@@ -468,30 +429,14 @@
                     <div class="title-h2__content"><span>Почему</span> мы</div>
                 </h2>
                 <div class="why__body">
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">01</div>
-                        <p class="why-item__text">
-                            Мы предлагаем оптимальные решения задач по маркировке продукции для предприятий
-                            пищевой, ликероводочной, фармацевтической, автомобильной, электронной и других
-                            промышленностей
-                        </p>
-                    </div>
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">02</div>
-                        <p class="why-item__text">
-                            Мы предоставляем своим заказчикам только качественное оборудование собственного
-                            производства и гарантируем полный комплекс услуг по поставке, монтажу, и
-                            оперативному сервисному облуживанию
-                        </p>
-                    </div>
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">03</div>
-                        <p class="why-item__text">
-                            Обеспечивает обслуживание производственных предприятий на предмет поставки,
-                            гарантийного и сервисного обслуживания промышленных каплеструйных маркировочных
-                            принтеров
-                        </p>
-                    </div>
+                    @foreach($advantages as $advantage)
+                        <div animate class="why__item why-item">
+                            <div class="why-item__digit">0{{ $loop->index + 1 }}</div>
+                            <p class="why-item__text">
+                                {{ $advantage->text }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>

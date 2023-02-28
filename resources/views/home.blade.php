@@ -207,30 +207,14 @@
                     <div class="title-h2__content"><span>Почему</span> мы</div>
                 </h2>
                 <div class="why__body">
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">01</div>
-                        <p class="why-item__text">
-                            Мы предлагаем оптимальные решения задач по маркировке продукции для предприятий
-                            пищевой, ликероводочной, фармацевтической, автомобильной, электронной и других
-                            промышленностей
-                        </p>
-                    </div>
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">02</div>
-                        <p class="why-item__text">
-                            Мы предоставляем своим заказчикам только качественное оборудование собственного
-                            производства и гарантируем полный комплекс услуг по поставке, монтажу, и
-                            оперативному сервисному облуживанию
-                        </p>
-                    </div>
-                    <div animate class="why__item why-item">
-                        <div class="why-item__digit">03</div>
-                        <p class="why-item__text">
-                            Обеспечивает обслуживание производственных предприятий на предмет поставки,
-                            гарантийного и сервисного обслуживания промышленных каплеструйных маркировочных
-                            принтеров
-                        </p>
-                    </div>
+                    @foreach($advantages as $advantage)
+                        <div animate class="why__item why-item">
+                            <div class="why-item__digit">0{{ $loop->index + 1 }}</div>
+                            <p class="why-item__text">
+                                {{ $advantage->text }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>

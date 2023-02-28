@@ -69,8 +69,8 @@
                                          alt="{{ $product->name }}"/></picture>
                             </div>
                         @endisset
-                        @isset($product->video)
-                            <button data-popup="#youtube" data-popup-youtube="{{ $product->video }}"
+                        @isset($videoLink)
+                            <button data-popup="#youtube" data-popup-youtube="{{ $videoLink }}"
                                     class="product-hero__video-button video-button">
                                 <div class="video-button__button">
                                     <svg width="11" height="12" viewBox="0 0 11 12" fill="none"

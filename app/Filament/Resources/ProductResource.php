@@ -85,7 +85,7 @@ class ProductResource extends Resource
                 TextInput::make('video')
                     ->maxLength(255)
                     ->label('Ссылка на видео')
-                    ->hint('Идентификатор видео формата vDUCOmbQzA0'),
+                    ->hint('Видео формата https://www.youtube.com/watch?v=FwlczfL2hZk'),
                 Select::make('product_category_id')
                     ->label('Категория продукции')
                     ->relationship('category', 'name')

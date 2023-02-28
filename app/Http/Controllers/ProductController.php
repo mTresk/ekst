@@ -19,6 +19,13 @@ class ProductController extends Controller
         $product = $product->where('slug', $slug)->firstOrFail();
         $otherProducts = $product->whereNot('id', $product->id)->get();
 
-        return view('product', compact('product', 'otherProducts'));
+        $videoLink = null;
+
+        if ($product->video) {
+            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $product->video, $match);
+            $videoLink = $match[1];
+        }
+
+        return view('product', compact('product', 'otherProducts', 'videoLink'));
     }
 }

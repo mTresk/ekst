@@ -99,7 +99,7 @@
                                         type="image/webp">
                                     <img class="industries-card__background"
                                          src="{{ $industry->getFirstMedia('industries')->getUrl('industry') }}"
-                                         srcset="{{ $industry->getFirstMedia('industries')->getUrl('industry@2') }} 1x, {{ $industry->getFirstMedia('industries')->getUrl('industry@2') }} 2x"
+                                         srcset="{{ $industry->getFirstMedia('industries')->getUrl('industry') }} 1x, {{ $industry->getFirstMedia('industries')->getUrl('industry@2') }} 2x"
                                          alt="{{ $industry->name }}"/></picture>
                             @endisset
                             <h2 class="industries-card__title">{{ $industry->name }}</h2>

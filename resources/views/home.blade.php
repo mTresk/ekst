@@ -324,7 +324,7 @@
                                             srcset="{{ $client->getFirstMedia('clients')->getUrl('clientWebp') }} 1x, {{ $client->getFirstMedia('clients')->getUrl('clientWebp@2') }} 2x"
                                             type="image/webp">
                                         <img src="{{ $client->getFirstMedia('clients')->getUrl('client') }}"
-                                             srcset="{{ $client->getFirstMedia('clients')->getUrl('clientWebp') }} 1x, {{ $client->getFirstMedia('clients')->getUrl('clientWebp@2') }} 2x"
+                                             srcset="{{ $client->getFirstMedia('clients')->getUrl('client') }} 1x, {{ $client->getFirstMedia('clients')->getUrl('client@2') }} 2x"
                                              alt="Логотип"/></picture>
                                 </div>
                             </div>

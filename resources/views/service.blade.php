@@ -7,9 +7,9 @@
     <main class="page">
         <section animate class="service-header">
             <picture>
-                <source srcset="{{ asset('img/service-header@2x.webp') }} 2x, {{ asset('img/service-header.webp') }} 1x"
+                <source srcset="{{ asset('img/service-header.webp') }} 1x, {{ asset('img/service-header@2x.webp') }} 2x"
                         type="image/webp">
-                <img srcset="{{ asset('img/service-header@2x.jpg') }} 2x, {{ asset('img/service-header.jpg') }} 1x"
+                <img srcset="{{ asset('img/service-header.jpg') }} 1x, {{ asset('img/service-header@2x.jpg') }} 2x"
                      src="{{ asset('img/service-header.jpg') }}" alt="Фоновое изображение"
                      class="service-header__background"/>
             </picture>
@@ -109,7 +109,7 @@
                                         srcset="{{ $part->getFirstMedia('parts')->getUrl('partWebp') }} 1x, {{ $part->getFirstMedia('parts')->getUrl('partWebp@2') }} 2x"
                                         type="image/webp">
                                     <img src="{{ $part->getFirstMedia('parts')->getUrl('part') }}"
-                                         srcset="{{ $part->getFirstMedia('parts')->getUrl('part@2') }} 1x, {{ $part->getFirstMedia('parts')->getUrl('part@2') }} 2x"
+                                         srcset="{{ $part->getFirstMedia('parts')->getUrl('part') }} 1x, {{ $part->getFirstMedia('parts')->getUrl('part@2') }} 2x"
                                          alt="{{ $part->name }}"/></picture>
                             </div>
                             <div class="service-card__content">
@@ -170,7 +170,7 @@
                                         srcset="{{ $liquid->getFirstMedia('liquids')->getUrl('liquidWebp') }} 1x, {{ $liquid->getFirstMedia('liquids')->getUrl('liquidWebp@2') }} 2x"
                                         type="image/webp">
                                     <img src="{{ $liquid->getFirstMedia('liquids')->getUrl('liquid') }}"
-                                         srcset="{{ $liquid->getFirstMedia('liquids')->getUrl('liquid@2') }} 1x, {{ $liquid->getFirstMedia('liquids')->getUrl('liquid@2') }} 2x"
+                                         srcset="{{ $liquid->getFirstMedia('liquids')->getUrl('liquid') }} 1x, {{ $liquid->getFirstMedia('liquids')->getUrl('liquid@2') }} 2x"
                                          alt="{{ $liquid->name }}"/></picture>
                             </div>
                             <div class="service-card__content">
@@ -239,7 +239,7 @@
                                         srcset="{{ $program->getFirstMedia('programs')->getUrl('programWebp') }} 1x, {{ $program->getFirstMedia('programs')->getUrl('programWebp@2') }} 2x"
                                         type="image/webp">
                                     <img src="{{ $program->getFirstMedia('programs')->getUrl('program') }}"
-                                         srcset="{{ $program->getFirstMedia('programs')->getUrl('program@2') }} 1x, {{ $program->getFirstMedia('programs')->getUrl('program@2') }} 2x"
+                                         srcset="{{ $program->getFirstMedia('programs')->getUrl('program') }} 1x, {{ $program->getFirstMedia('programs')->getUrl('program@2') }} 2x"
                                          alt="{{ $program->name }}"/></picture>
                             </div>
                             <div class="service-card__content">

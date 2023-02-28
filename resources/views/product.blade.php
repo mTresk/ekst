@@ -5,6 +5,7 @@
 @isset($product->short_description)
     @section('description', $product->short_description)
 @endisset
+@section('ogImage', $product->getFirstMedia('products')->getUrl('product@2'))
 
 @section('content')
     <main class="page">
@@ -69,7 +70,7 @@
                                         srcset="{{ $product->getFirstMedia('products')->getUrl('productWebp') }} 1x, {{ $product->getFirstMedia('products')->getUrl('productWebp@2') }} 2x"
                                         type="image/webp">
                                     <img src="{{ $product->getFirstMedia('products')->getUrl('product') }}"
-                                         srcset="{{ $product->getFirstMedia('products')->getUrl('productWebp') }} 1x, {{ $product->getFirstMedia('products')->getUrl('productWebp@2') }} 2x"
+                                         srcset="{{ $product->getFirstMedia('products')->getUrl('product') }} 1x, {{ $product->getFirstMedia('products')->getUrl('product@2') }} 2x"
                                          alt="{{ $product->name }}"/></picture>
                             </div>
                         @endisset
@@ -110,7 +111,7 @@
                                                             srcset="{{ $slide->getUrl('sliderWebp') }} 1x, {{ $slide->getUrl('sliderWebp@2') }} 2x"
                                                             type="image/webp">
                                                         <img src="{{ $slide->getUrl('slider') }}"
-                                                             srcset="{{ $slide->getUrl('sliderWebp') }} 1x, {{ $slide->getUrl('sliderWebp@2') }} 2x"
+                                                             srcset="{{ $slide->getUrl('slider') }} 1x, {{ $slide->getUrl('slider@2') }} 2x"
                                                              alt="{{ $product->name }}"/></picture>
                                                 </div>
                                             @endforeach
@@ -127,7 +128,7 @@
                                                                     srcset="{{ $slide->getUrl('sliderThumbWebp') }} 1x, {{ $slide->getUrl('sliderThumbWebp@2') }} 2x"
                                                                     type="image/webp">
                                                                 <img src="{{ $slide->getUrl('sliderThumb') }}"
-                                                                     srcset="{{ $slide->getUrl('sliderThumbWebp') }} 1x, {{ $slide->getUrl('sliderThumbWebp@2') }} 2x"
+                                                                     srcset="{{ $slide->getUrl('sliderThumb') }} 1x, {{ $slide->getUrl('sliderThumb@2') }} 2x"
                                                                      alt="{{ $product->name }}"/></picture>
                                                         </div>
                                                     @endforeach

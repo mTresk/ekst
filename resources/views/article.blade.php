@@ -2,6 +2,7 @@
 
 @section('color', 'light')
 @section('title', $article->title)
+@section('ogImage', $article->getFirstMedia('articles')->getUrl('article@2'))
 
 @section('content')
     <main class="page">

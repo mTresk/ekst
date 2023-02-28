@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Advantage;
 use App\Models\Document;
 use App\Models\History;
@@ -18,7 +19,8 @@ class AboutController extends Controller
         $advantages = Advantage::all();
         $reviews = Review::all();
         $documents = Document::all();
+        $about = About::first();
 
-        return view('about', compact('history', 'numbers', 'advantages', 'reviews', 'documents'));
+        return view('about', compact('history', 'numbers', 'advantages', 'reviews', 'documents', 'about'));
     }
 }

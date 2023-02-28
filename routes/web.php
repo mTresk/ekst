@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
@@ -23,3 +25,7 @@ Route::get('/blog', Blog::class)->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+
+Route::get('/policy', [PolicyController::class, 'index'])->name('policy');

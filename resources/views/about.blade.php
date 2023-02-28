@@ -60,8 +60,7 @@
                     <div class="about-hero__content">
                         <h1 class="about-hero__title">О нас</h1>
                         <p class="about-hero__text">
-                            Институт электрокаплеструйных технологий занимается комплексным решением задач
-                            промышленной маркировки с помощью маркировочных принтеров собственного производства
+                            {{ $about->about }}
                         </p>
                     </div>
                     <div class="about-hero__image">
@@ -177,62 +176,7 @@
                     <div class="title-h2__content">Статья об <br/><span>основателе компании</span></div>
                 </h2>
                 <div animate class="article__content content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur. Nisl nisi tellus sagittis integer pellentesque
-                        turpis vitae. Mauris ultrices id lorem pharetra fringilla egestas nec dictum sit.
-                        Pharetra quam habitasse metus ridiculus amet vel morbi nisl egestas. Tellus ultrices
-                        imperdiet sollicitudin quam tincidunt et. Habitasse sit velit dictum tortor elementum
-                        sit vulputate. Scelerisque eget mi nibh non vitae faucibus.
-                    </p>
-                    <p>
-                        Habitant imperdiet praesent et turpis nunc risus donec. Sociis amet dolor vulputate
-                        velit dapibus eleifend pellentesque lectus. In morbi eleifend enim proin aliquam donec
-                        fusce interdum. Fames fames leo tellus dictum ultrices massa. Vulputate rhoncus donec
-                        integer non sit. Blandit tristique in in sagittis. Viverra faucibus risus in pulvinar
-                        pulvinar lectus commodo quisque ullamcorper. Elementum varius velit imperdiet lacus
-                        tortor. Ut in et interdum semper rhoncus pretium curabitur diam risus. A consequat in ac
-                        adipiscing sagittis convallis urna. Elementum egestas ut ante pellentesque sit sed. Eu
-                        eu nunc est egestas ultricies enim. Lectus ridiculus morbi cursus mauris neque tincidunt
-                        amet lectus facilisis. Id metus sed risus mus orci nisl eget pretium commodo.
-                    </p>
-                    <p>
-                        At diam vivamus etiam convallis sapien elementum integer egestas blandit. Volutpat
-                        penatibus urna quam adipiscing id. Neque congue placerat sed neque. Egestas facilisis
-                        natoque turpis enim auctor at massa. Consequat tempor cursus nisi nunc ipsum leo amet.
-                        Facilisis ac felis malesuada velit velit. Nec dui scelerisque lacinia tempor sed at
-                        viverra porta id. Arcu faucibus sociis sit at. Sodales leo ac pulvinar morbi felis. Sed
-                        massa et id orci auctor vel sed blandit. Enim ut sit in habitant aliquam tellus. Ante
-                        massa accumsan magna adipiscing morbi sit duis proin viverra. Ultricies in in elementum
-                        donec nulla.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur. Nisl nisi tellus sagittis integer pellentesque
-                        turpis vitae. Mauris ultrices id lorem pharetra fringilla egestas nec dictum sit.
-                        Pharetra quam habitasse metus ridiculus amet vel morbi nisl egestas. Tellus ultrices
-                        imperdiet sollicitudin quam tincidunt et. Habitasse sit velit dictum tortor elementum
-                        sit vulputate. Scelerisque eget mi nibh non vitae faucibus.
-                    </p>
-                    <p>
-                        Habitant imperdiet praesent et turpis nunc risus donec. Sociis amet dolor vulputate
-                        velit dapibus eleifend pellentesque lectus. In morbi eleifend enim proin aliquam donec
-                        fusce interdum. Fames fames leo tellus dictum ultrices massa. Vulputate rhoncus donec
-                        integer non sit. Blandit tristique in in sagittis. Viverra faucibus risus in pulvinar
-                        pulvinar lectus commodo quisque ullamcorper. Elementum varius velit imperdiet lacus
-                        tortor. Ut in et interdum semper rhoncus pretium curabitur diam risus. A consequat in ac
-                        adipiscing sagittis convallis urna. Elementum egestas ut ante pellentesque sit sed. Eu
-                        eu nunc est egestas ultricies enim. Lectus ridiculus morbi cursus mauris neque tincidunt
-                        amet lectus facilisis. Id metus sed risus mus orci nisl eget pretium commodo.
-                    </p>
-                    <p>
-                        At diam vivamus etiam convallis sapien elementum integer egestas blandit. Volutpat
-                        penatibus urna quam adipiscing id. Neque congue placerat sed neque. Egestas facilisis
-                        natoque turpis enim auctor at massa. Consequat tempor cursus nisi nunc ipsum leo amet.
-                        Facilisis ac felis malesuada velit velit. Nec dui scelerisque lacinia tempor sed at
-                        viverra porta id. Arcu faucibus sociis sit at. Sodales leo ac pulvinar morbi felis. Sed
-                        massa et id orci auctor vel sed blandit. Enim ut sit in habitant aliquam tellus. Ante
-                        massa accumsan magna adipiscing morbi sit duis proin viverra. Ultricies in in elementum
-                        donec nulla.
-                    </p>
+                    {!! $about->article !!}
                 </div>
             </div>
         </section>

@@ -61,7 +61,8 @@
                             <li class="menu__item"><a href="{{ route('about.index') }}" class="menu__link">О
                                     компании</a></li>
                             <li class="menu__item"><a href="{{ route('blog.index') }}" class="menu__link">Блог</a></li>
-                            <li class="menu__item"><a href="/contacts.html" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="{{ route('contacts') }}" class="menu__link">Контакты</a>
+                            </li>
                         </ul>
                         <div class="header__socials">
                             <a href="#" class="header__social">

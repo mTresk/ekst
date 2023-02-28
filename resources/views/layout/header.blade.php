@@ -65,7 +65,7 @@
                             </li>
                         </ul>
                         <div class="header__socials">
-                            <a href="#" class="header__social">
+                            <a href="{{ $vk }}" class="header__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -74,7 +74,7 @@
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>
                                 </svg>
                             </a>
-                            <a href="#" class="header__social">
+                            <a href="{{ $telegram }}" class="header__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>
@@ -83,7 +83,7 @@
                                         fill="white"/>
                                 </svg>
                             </a>
-                            <a href="#" class="header__social">
+                            <a href="{{ $whatsapp }}" class="header__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>

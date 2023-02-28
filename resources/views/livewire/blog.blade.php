@@ -1,6 +1,8 @@
 @push('head')
     @livewireStyles
 @endpush
+
+@section('title', 'Блог')
 <div>
     <main class="page">
         <section class="blog">

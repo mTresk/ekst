@@ -2,6 +2,7 @@
 
 @section('color', 'light')
 @section('title', 'О компании')
+@section('description', $about->about)
 
 @section('content')
     <main class="page">

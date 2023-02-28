@@ -1,5 +1,12 @@
 <head>
-    <title>@yield('title') - Институт электрокаплеструйных технологий</title>
+    @if(Request::is('/'))
+        <title>Институт электрокаплеструйных технологий</title>
+    @else
+        <title>@yield('title') - Институт электрокаплеструйных технологий</title>
+    @endif
+
+    <meta name="description"
+          content="@yield('description', 'Российский лидер в области разработки, производства и обслуживания промышленных электрокаплеструйных принтеров для маркировки любой продукции')">
     <meta charset="UTF-8"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="robots" content="noindex, nofollow"/>

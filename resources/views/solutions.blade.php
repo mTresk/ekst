@@ -1,6 +1,7 @@
 @extends('layout.app')
 
 @section('title', 'Решения')
+@section('description', 'Производительность, доступность, простота эксплуатации')
 
 @section('content')
     <main class="page">

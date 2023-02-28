@@ -2,6 +2,9 @@
 
 @section('color','light')
 @section('title', $product->name)
+@isset($product->short_description)
+    @section('description', $product->short_description)
+@endisset
 
 @section('content')
     <main class="page">

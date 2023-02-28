@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title', 'Решения')
+
 @section('content')
     <main class="page">
         <section class="solutions-header">

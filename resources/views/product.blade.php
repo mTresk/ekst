@@ -1,6 +1,7 @@
 @extends('layout.app')
 
 @section('color','light')
+@section('title', $product->name)
 
 @section('content')
     <main class="page">

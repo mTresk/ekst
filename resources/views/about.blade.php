@@ -1,6 +1,7 @@
 @extends('layout.app')
 
-@section('color','light')
+@section('color', 'light')
+@section('title', 'О компании')
 
 @section('content')
     <main class="page">

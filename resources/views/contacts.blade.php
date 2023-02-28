@@ -1,4 +1,6 @@
-@extends('layout.app')
+@extends('layout.contacts')
+
+@section('title', 'Контакты')
 
 @section('content')
     <main class="page">

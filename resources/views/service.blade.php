@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title', 'Сервис')
+
 @section('content')
     <main class="page">
         <section animate class="service-header">
@@ -25,7 +27,7 @@
                     <p>
                         Помимо сервисного центра ЭКСТ, обслуживание и ремонт осуществляют региональные дилерские
                         центры, с перечнем которых более подробно можно ознакомиться
-                        <a href="/contacts.html">здесь</a>.
+                        <a href="{{ route('contacts') }}">здесь</a>.
                     </p>
                 </div>
             </div>

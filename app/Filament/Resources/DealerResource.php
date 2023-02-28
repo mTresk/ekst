@@ -23,7 +23,7 @@ class DealerResource extends Resource
     protected static ?string $modelLabel = 'Дилеры';
     protected static ?string $pluralModelLabel = 'Дилеры';
     protected static ?string $navigationLabel = 'Дилеры';
-    protected static ?int $navigationSort = 14;
+    protected static ?int $navigationSort = 15;
     protected static ?string $navigationGroup = 'Контакты';
 
     public static function form(Form $form): Form

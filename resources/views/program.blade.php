@@ -1,6 +1,7 @@
 @extends('layout.app')
 
-@section('color','light')
+@section('color', 'light')
+@section('title', $program->name)
 
 @section('content')
     <main class="page">

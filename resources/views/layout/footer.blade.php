@@ -38,24 +38,25 @@
                 <div class="top-footer__content">
                     <div class="top-footer__block">
                         <div class="top-footer__label">Адрес</div>
-                        <div class="top-footer__address">г. Санкт-Петербург, Старо-Петергофский просп., 40</div>
+                        <div class="top-footer__address">{{ $address }}</div>
                     </div>
                     <div class="top-footer__block">
                         <div class="top-footer__label">Email</div>
-                        <a href="mailto:info@ekst.ru" class="top-footer__email">info@ekst.ru</a>
+                        <a href="mailto:{{ $email }}" class="top-footer__email">{{ $email }}</a>
                     </div>
                     <div class="top-footer__block">
                         <div class="top-footer__label">Телефон</div>
-                        <a href="tel:+78127185910" class="top-footer__phone">+7 (812) 718-59-10</a>
+                        <a href="tel:{{ str_replace(['(', ')', ' ', '-'], '', $phone ) }}"
+                           class="top-footer__phone">{{ $phone }}</a>
                     </div>
                     <div class="top-footer__block">
                         <div class="top-footer__label">Время работы</div>
-                        <div class="top-footer__schedule">пн-пт с 10:00 до 18:00</div>
+                        <div class="top-footer__schedule">{{ $schedule }}</div>
                     </div>
                     <div class="top-footer__block">
                         <div class="top-footer__label">Социальные сети</div>
                         <div class="top-footer__socials">
-                            <a href="#" class="top-footer__social">
+                            <a href="{{ $vk }}" class="top-footer__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -64,7 +65,7 @@
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>
                                 </svg>
                             </a>
-                            <a href="#" class="top-footer__social">
+                            <a href="{{ $telegram }}" class="top-footer__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>
@@ -73,7 +74,7 @@
                                         fill="white"/>
                                 </svg>
                             </a>
-                            <a href="#" class="top-footer__social">
+                            <a href="{{ $whatsapp }}" class="top-footer__social">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="15" cy="15" r="14" stroke="white" stroke-width="2"/>

@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title', 'Главная')
+
 @section('content')
     <main class="page">
         <section data-fullscreen class="hero">

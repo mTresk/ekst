@@ -95,8 +95,8 @@
                         </div>
                     </nav>
                 </div>
-                <a data-da=".menu__body,767,1" href="tel:+7 (812) 718-59-10" class="header__phone">+7 (812)
-                    718-59-10</a>
+                <a data-da=".menu__body,767,1" href="tel:{{ str_replace(['(', ')', ' ', '-'], '', $phone ) }}"
+                   class="header__phone">{{ $phone }}</a>
             </div>
         </div>
     </div>

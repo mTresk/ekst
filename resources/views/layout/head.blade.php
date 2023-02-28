@@ -1,5 +1,5 @@
 <head>
-    <title>Главная</title>
+    <title>@yield('title') - Институт электрокаплеструйных технологий</title>
     <meta charset="UTF-8"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="robots" content="noindex, nofollow"/>

@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title', $industry->name)
+
 @section('content')
     <main class="page">
         <section class="industry-header">

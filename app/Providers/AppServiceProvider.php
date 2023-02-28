@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Contact;
+use Filament\Facades\Filament;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -31,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('vk', $contacts->vk);
             $view->with('telegram', $contacts->telegram);
             $view->with('whatsapp', $contacts->whatsapp);
+        });
+
+        Filament::serving(function () {
+            Filament::registerViteTheme('resources/scss/filament.scss');
         });
     }
 }

@@ -22,7 +22,7 @@ class PartResource extends Resource
 {
     protected static ?string $model = Part::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-chart-pie';
     protected static ?string $modelLabel = 'Запасные части';
     protected static ?string $pluralModelLabel = 'Запасные части';
     protected static ?string $navigationLabel = 'Запасные части';

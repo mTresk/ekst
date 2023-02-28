@@ -11,7 +11,7 @@ use Filament\Forms;
 
 class PageContacts extends Page implements Forms\Contracts\HasForms
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
     protected static ?string $navigationLabel = 'Контакты';
     protected static ?string $title = 'Контакты';
     protected static ?string $navigationGroup = 'Контакты';

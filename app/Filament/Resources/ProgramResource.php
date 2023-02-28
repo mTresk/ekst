@@ -26,7 +26,7 @@ class ProgramResource extends Resource
 {
     protected static ?string $model = Program::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments';
     protected static ?string $modelLabel = 'Программы';
     protected static ?string $pluralModelLabel = 'Программы';
     protected static ?string $navigationLabel = 'Программы';

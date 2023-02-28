@@ -19,7 +19,7 @@ class DealerResource extends Resource
 {
     protected static ?string $model = Dealer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-map';
     protected static ?string $modelLabel = 'Дилеры';
     protected static ?string $pluralModelLabel = 'Дилеры';
     protected static ?string $navigationLabel = 'Дилеры';

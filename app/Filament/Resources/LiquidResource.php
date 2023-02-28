@@ -22,7 +22,7 @@ class LiquidResource extends Resource
 {
     protected static ?string $model = Liquid::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-beaker';
     protected static ?string $modelLabel = 'Чернила и жидкости';
     protected static ?string $pluralModelLabel = 'Чернила и жидкости';
     protected static ?string $navigationLabel = 'Чернила и жидкости';

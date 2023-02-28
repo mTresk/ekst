@@ -27,7 +27,7 @@ class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $modelLabel = 'Статьи';
     protected static ?string $pluralModelLabel = 'Статьи';
     protected static ?string $navigationLabel = 'Статьи';

@@ -17,7 +17,7 @@ class AdvantageResource extends Resource
 {
     protected static ?string $model = Advantage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-thumb-up';
     protected static ?string $modelLabel = 'Преимущества';
     protected static ?string $pluralModelLabel = 'Преимущества';
     protected static ?string $navigationLabel = 'Преимущества';

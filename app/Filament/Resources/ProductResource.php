@@ -26,7 +26,7 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-printer';
     protected static ?string $modelLabel = 'Продукция';
     protected static ?string $pluralModelLabel = 'Продукция';
     protected static ?string $navigationLabel = 'Продукция';

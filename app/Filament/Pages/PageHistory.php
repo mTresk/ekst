@@ -11,7 +11,7 @@ use Filament\Forms;
 
 class PageHistory extends Page implements Forms\Contracts\HasForms
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     protected static ?string $navigationLabel = 'История';
     protected static ?string $title = 'История';
     protected static ?string $navigationGroup = 'О компании';

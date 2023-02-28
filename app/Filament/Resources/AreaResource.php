@@ -21,7 +21,7 @@ class AreaResource extends Resource
 {
     protected static ?string $model = Area::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-arrows-expand';
     protected static ?string $modelLabel = 'Область применения';
     protected static ?string $pluralModelLabel = 'Области применения';
     protected static ?string $navigationLabel = 'Области применения';

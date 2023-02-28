@@ -17,7 +17,7 @@ class NumberResource extends Resource
 {
     protected static ?string $model = Number::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-chart-square-bar';
     protected static ?string $modelLabel = 'Цифры';
     protected static ?string $pluralModelLabel = 'Цифры';
     protected static ?string $navigationLabel = 'Цифры';

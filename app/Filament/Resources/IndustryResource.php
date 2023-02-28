@@ -24,7 +24,7 @@ class IndustryResource extends Resource
 {
     protected static ?string $model = Industry::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-view-grid';
     protected static ?string $modelLabel = 'Отрасль';
     protected static ?string $pluralModelLabel = 'Отрасли';
     protected static ?string $navigationLabel = 'Отрасли';

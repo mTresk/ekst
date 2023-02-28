@@ -19,7 +19,7 @@ class VideoResource extends Resource
 {
     protected static ?string $model = Video::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
     protected static ?string $modelLabel = 'Видео';
     protected static ?string $pluralModelLabel = 'Видео';
     protected static ?string $navigationLabel = 'Видео';

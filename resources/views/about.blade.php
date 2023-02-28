@@ -66,8 +66,11 @@
                     </div>
                     <div class="about-hero__image">
                         <picture>
-                            <source srcset="img/about/hero@2x.webp" type="image/webp">
-                            <img src="img/about/hero@2x.png" alt="Коллаж"/></picture>
+                            <source
+                                srcset="{{ asset('img/about/hero@2x.webp') }} 2x, {{ asset('img/about/hero.webp') }} 1x"
+                                type="image/webp">
+                            <img srcset="{{ asset('img/about/hero@2x.png') }} 2x, {{ asset('img/about/hero.png') }} 1x"
+                                 src="{{asset('img/about/hero.png')}}" alt="Коллаж"/></picture>
                     </div>
                 </div>
             </div>
@@ -75,37 +78,19 @@
         <section animate class="numbers numbers--about">
             <div class="numbers__container">
                 <div class="numbers__body">
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="35"
-                                  data-purecounter-delay="3" data-purecounter-duration="1.3">35</span>+
+                    @foreach($numbers as $number)
+                        <div animate class="numbers__item numbers-item">
+                            <div class="numbers-item__number">
+                            <span class="purecounter" data-purecounter-start="0"
+                                  data-purecounter-end="{{ $number->number }}"
+                                  data-purecounter-delay="3"
+                                  data-purecounter-duration="1.3">{{ $number->number }}</span>+
+                            </div>
+                            <p class="numbers-item__text">
+                                {{ $number->text }}
+                            </p>
                         </div>
-                        <p class="numbers-item__text">
-                            Более 35 лет занимаемся производством, поставкой и монтажем каплеструйных принтеров
-                            по России и миру
-                        </p>
-                    </div>
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="150"
-                                  data-purecounter-delay="3" data-purecounter-duration="1.3">150</span>+
-                        </div>
-                        <p class="numbers-item__text">
-                            Более 150 городов во всем мире, в которые мы поставляем наше оборудование и
-                            обеспечиваем обслуживание принтеров
-                        </p>
-                    </div>
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="50"
-                                  data-purecounter-delay="3" data-purecounter-duration="1.3">50</span>+
-                        </div>
-                        <p class="numbers-item__text">
-                            Разработано и внедрено более 50 моделей маркировочных принтеров, соответствующих
-                            всем современным техническим требованиям и удовлетворяющих потребности наших
-                            клиентов
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

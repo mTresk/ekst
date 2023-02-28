@@ -269,37 +269,19 @@
             </svg>
             <div class="numbers__container">
                 <div class="numbers__body">
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="35"
-                                      data-purecounter-delay="3" data-purecounter-duration="1.3">35</span>+
+                    @foreach($numbers as $number)
+                        <div animate class="numbers__item numbers-item">
+                            <div class="numbers-item__number">
+                            <span class="purecounter" data-purecounter-start="0"
+                                  data-purecounter-end="{{ $number->number }}"
+                                  data-purecounter-delay="3"
+                                  data-purecounter-duration="1.3">{{ $number->number }}</span>+
+                            </div>
+                            <p class="numbers-item__text">
+                                {{ $number->text }}
+                            </p>
                         </div>
-                        <p class="numbers-item__text">
-                            Более 35 лет занимаемся производством, поставкой и монтажем каплеструйных принтеров
-                            по России и миру
-                        </p>
-                    </div>
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="150"
-                                      data-purecounter-delay="3" data-purecounter-duration="1.3">150</span>+
-                        </div>
-                        <p class="numbers-item__text">
-                            Более 150 городов во всем мире, в которые мы поставляем наше оборудование и
-                            обеспечиваем обслуживание принтеров
-                        </p>
-                    </div>
-                    <div animate class="numbers__item numbers-item">
-                        <div class="numbers-item__number">
-                                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="50"
-                                      data-purecounter-delay="3" data-purecounter-duration="1.3">50</span>+
-                        </div>
-                        <p class="numbers-item__text">
-                            Разработано и внедрено более 50 моделей маркировочных принтеров, соответствующих
-                            всем современным техническим требованиям и удовлетворяющих потребности наших
-                            клиентов
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
                 <a animate href="{{ route('about.index') }}" class="numbers__link link">
                     <span>О компании</span>

@@ -17,7 +17,7 @@
                                 fill="#0077BD"/>
                         </svg>
                         <span>
-								Российский лидер в области разработки, производства и обслуживанияпромышленных
+								Российский лидер в области разработки, производства и обслуживания промышленных
 								электрокаплеструйных принтеров <br/>для маркировки любой продукции
 							</span>
                     </p>
@@ -481,88 +481,25 @@
                     <div class="title-h2__content">Видео</div>
                 </h2>
                 <div class="video__body">
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
+                    @foreach($videos as $video)
+                        <div animate class="video__item">
+                            <div class="video__image">
+                                <img src="" alt=""/>
+                            </div>
+                            <button data-popup="#youtube" data-popup-youtube="{{ $video }}" aria-label="Проиграть"
+                                    class="video__button">
+                                <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
+                                          fill="#0077BD"/>
+                                </svg>
+                            </button>
                         </div>
-                        <button data-popup="#youtube" data-popup-youtube="ncSLFVvf_k4" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
-                        </div>
-                        <button data-popup="#youtube" data-popup-youtube="1KoJuCxEjoM" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
-                        </div>
-                        <button data-popup="#youtube" data-popup-youtube="14LM5A8Aj_w" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
-                        </div>
-                        <button data-popup="#youtube" data-popup-youtube="iACpbvMhP0k" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
-                        </div>
-                        <button data-popup="#youtube" data-popup-youtube="EsEAJqYDg2Y" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div animate class="video__item">
-                        <div class="video__image">
-                            <img src="" alt=""/>
-                        </div>
-                        <button data-popup="#youtube" data-popup-youtube="t7QB0iUIPMc" aria-label="Проиграть"
-                                class="video__button">
-                            <svg width="11" height="12" viewBox="0 0 11 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.2861 6.00007L0.857561 11.4437L0.857561 0.556481L10.2861 6.00007Z"
-                                      fill="#0077BD"/>
-                            </svg>
-                        </button>
-                    </div>
+                    @endforeach
                 </div>
                 <a animate href="https://www.youtube.com/channel/UCwtmjxw2rWqLltRVRXwkDxg" target="_blank"
                    class="video__link link">
-                    <span>Смотреть на youtube</span>
+                    <span>Смотреть на Youtube</span>
                     <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M6.53033 7.03033C6.82322 6.73744 6.82322 6.26256 6.53033 5.96967L1.75736 1.1967C1.46447 0.903806 0.989593 0.903806 0.696699 1.1967C0.403806 1.48959 0.403806 1.96447 0.696699 2.25736L4.93934 6.5L0.696699 10.7426C0.403806 11.0355 0.403806 11.5104 0.696699 11.8033C0.989593 12.0962 1.46447 12.0962 1.75736 11.8033L6.53033 7.03033ZM5 7.25H6V5.75H5V7.25Z"

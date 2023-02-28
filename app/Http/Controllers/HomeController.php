@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Client;
 use App\Models\Number;
 use App\Models\Product;
+use App\Models\Video;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,15 @@ class HomeController extends Controller
         $advantages = Advantage::all();
         $clients = Client::all();
 
-        return view('home', compact('printers', 'articles', 'numbers', 'advantages', 'clients'));
+        $videoLinks = Video::all()->take(6);
+        $videos = [];
+
+        foreach ($videoLinks as $link) {
+            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $link->url, $match);
+            $videos[] = $match[1];
+        }
+
+
+        return view('home', compact('printers', 'articles', 'numbers', 'advantages', 'clients', 'videos'));
     }
 }

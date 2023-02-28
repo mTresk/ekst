@@ -60,13 +60,16 @@ class ArticleResource extends Resource
                 TinyEditor::make('content')
                     ->columnSpan(2)
                     ->label('Контент')
-                    ->hint('Текст, фото и т.д.'),
+                    ->hint('Текст, фото и т.д.')
+                    ->required(),
                 SpatieMediaLibraryFileUpload::make('article')
                     ->image()
                     ->collection('articles')
-                    ->label('Основное изображение'),
+                    ->label('Основное изображение')
+                    ->required(),
                 DateTimePicker::make('published_at')
-                    ->label('Дата публикации'),
+                    ->label('Дата публикации')
+                    ->required(),
                 Select::make('category_id')
                     ->label('Категория')
                     ->relationship('category', 'name')

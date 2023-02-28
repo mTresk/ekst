@@ -301,7 +301,7 @@
                         </p>
                     </div>
                 </div>
-                <a animate href="/about.html" class="numbers__link link">
+                <a animate href="{{ route('about.index') }}" class="numbers__link link">
                     <span>О компании</span>
                     <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
@@ -20,3 +21,5 @@ Route::get('/service/{slug}', [ServiceController::class, 'show'])->name('service
 
 Route::get('/blog', Blog::class)->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');

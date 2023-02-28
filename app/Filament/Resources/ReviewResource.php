@@ -13,6 +13,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\ToggleColumn;
 
 class ReviewResource extends Resource
 {
@@ -56,6 +57,9 @@ class ReviewResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime('d.m.Y')
                     ->label('Дата')
+                    ->sortable(),
+                ToggleColumn::make('is_published')
+                    ->label('Опубликован')
                     ->sortable(),
             ])->defaultSort('created_at', 'desc')
             ->filters([

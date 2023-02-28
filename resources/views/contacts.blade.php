@@ -1,6 +1,7 @@
 @extends('layout.contacts')
 
 @section('title', 'Контакты')
+@section('description', 'Контакты Института электрокаплеструйных технологий')
 
 @section('content')
     <main class="page">
@@ -22,52 +23,33 @@
             <div class="contacts__container">
                 <div class="contacts__body">
                     <div class="contacts__content">
-                        <div animate class="contacts__block">
-                            <h3 class="contacts__subtitle">Отдел продаж</h3>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Офис №1</div>
-                                <div class="contacts__info">
-                                    190020, г. Санкт-Петербург Старо-Петергофский просп., 40
-                                </div>
+                        @foreach($contacts as $contact)
+                            <div animate class="contacts__block">
+                                <h3 class="contacts__subtitle">{{ $contact['name'] }}</h3>
+                                @isset($contact['address'])
+                                    <div class="contacts__item">
+                                        <div class="contacts__label">Офис №1</div>
+                                        <div class="contacts__info">
+                                            {{ $contact['address'] }}
+                                        </div>
+                                    </div>
+                                @endisset
+                                @isset($contact['phone'])
+                                    <div class="contacts__item">
+                                        <div class="contacts__label">Телефон</div>
+                                        <a href="tel:{{ str_replace(['(', ')', ' ', '-'], '', $contact['phone'] ) }}"
+                                           class="contacts__info">{{ $contact['phone'] }}</a>
+                                    </div>
+                                @endisset
+                                @isset($contact['email'])
+                                    <div class="contacts__item">
+                                        <div class="contacts__label">Email</div>
+                                        <a href="mailto:{{ $contact['email'] }}"
+                                           class="contacts__info">{{ $contact['email'] }}</a>
+                                    </div>
+                                @endisset
                             </div>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Телефон</div>
-                                <a href="tel:+78127185910" class="contacts__info">+7 (812) 718-59-10</a>
-                            </div>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Email</div>
-                                <a href="mailto:info@ekst.ru" class="contacts__info">info@ekst.ru</a>
-                            </div>
-                        </div>
-                        <div animate class="contacts__block">
-                            <h3 class="contacts__subtitle">Генеральный директор</h3>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Телефон</div>
-                                <a href="tel:+78127185910" class="contacts__info">+7 (812) 718-59-10</a>
-                            </div>
-                        </div>
-                        <div animate class="contacts__block">
-                            <h3 class="contacts__subtitle">Техническая поддержка</h3>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Телефон</div>
-                                <a href="tel:+78127185939" class="contacts__info">+7 (812) 718-59-39</a>
-                            </div>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Email</div>
-                                <a href="mailto:info@ekst.ru" class="contacts__info">info@ekst.ru</a>
-                            </div>
-                        </div>
-                        <div animate class="contacts__block">
-                            <h3 class="contacts__subtitle">Запчасти и расходные материалы</h3>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Телефон</div>
-                                <a href="tel:+78127185910" class="contacts__info">+7 (812) 718-59-10</a>
-                            </div>
-                            <div class="contacts__item">
-                                <div class="contacts__label">Email</div>
-                                <a href="mailto:info@ekst.ru" class="contacts__info">info@ekst.ru</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <form animate action="#" class="contacts__form form">
                         <h3 class="form__title">Напишите нам</h3>

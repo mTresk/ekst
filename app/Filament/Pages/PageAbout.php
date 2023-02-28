@@ -42,20 +42,6 @@ class PageAbout extends Page implements Forms\Contracts\HasForms
         }
     }
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                Card::make([
-                    RichEditor::make('content')
-                        ->label('Содержимое')
-                        ->required()
-                        ->maxLength(65535)
-                        ->columnSpan(2),
-                ])
-            ]);
-    }
-
     protected function getFormSchema(): array
     {
         return [

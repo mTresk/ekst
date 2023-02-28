@@ -129,39 +129,16 @@
                 </h2>
             </div>
             <div class="map__map" id="map" data-coordinates="59.90441406420934,30.279890499999986">
-                <div data-coordinates="59.90441406420934,30.279890499999986" class="map__unit">
-                    <h3><strong>Институт электрокаплеструйных технологий</strong></h3>
-                    <p>Россия, г. Санкт-Петербург, Старо-Петергофский просп., 40</p>
-                    <p>Телефон: <a class="map__link" href="tel:+78127185910">+7 (812) 718-59-10</a></p>
-                    <p>E-mail: <a class="map__link" href="mailto:info@ekst.ru">info@ekst.ru</a></p>
-                </div>
-                <div data-coordinates="48.64866389085548,44.39812349999996" class="map__unit">
-                    <h3><strong>ИП Цуканов Олег Анатольевич</strong></h3>
-                    <p>Россия, Волгоградская область, г. Волгоград</p>
-                    <p>Телефон: <a class="map__link" href="tel:+79608957460">+7 (960) 895-74-60</a></p>
-                    <p>
-                        E-mail:
-                        <a class="map__link" href="mailto:ufo.texservis@gmail.com">ufo.texservis@gmail.com</a>
-                    </p>
-                </div>
-                <div data-coordinates="45.03819007460244,39.08587749999996" class="map__unit">
-                    <h3><strong>ООО «Новая Русь»</strong></h3>
-                    <p>Россия, Краснодарский край, г. Краснодар, ул. Уральская, д. 99, оф. 12</p>
-                    <p>Телефон: <a class="map__link" href="tel:+78612366824">+7 (861) 236-68-24</a></p>
-                    <p>
-                        E-mail:
-                        <a class="map__link" href="mailto:novajarus@mail.ru">novajarus@mail.ru</a>
-                    </p>
-                </div>
-                <div data-coordinates="55.81017706893767,37.83465049999997" class="map__unit">
-                    <h3><strong>ООО «Вемата»</strong></h3>
-                    <p>Россия, г. Москва, 16-ая Парковая ул., д. 26, корп.2, оф. 2501В</p>
-                    <p>Телефон: <a class="map__link" href="tel:+79197686264">+7 (919) 768-62-64</a></p>
-                    <p>
-                        E-mail:
-                        <a class="map__link" href="mailto:msk@vemata.ru">msk@vemata.ru</a>
-                    </p>
-                </div>
+                @foreach($dealers as $dealer)
+                    <div data-coordinates="{{ $dealer->coordinates }}" class="map__unit">
+                        <h3><strong>{{ $dealer->name }}</strong></h3>
+                        <p>{{ $dealer->address }}</p>
+                        <p>Телефон: <a class="map__link"
+                                       href="tel:{{ str_replace(['(', ')', ' ', '-'], '', $dealer->phone ) }}">{{ $dealer->phone }}</a>
+                        </p>
+                        <p>E-mail: <a class="map__link" href="mailto:{{ $dealer->email }}">{{ $dealer->email }}</a></p>
+                    </div>
+                @endforeach
             </div>
         </section>
     </main>

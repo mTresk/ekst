@@ -15,7 +15,7 @@ class PagePolicy extends Page implements Forms\Contracts\HasForms
     protected static ?string $title = 'Политика конфиденциальности';
     protected static ?string $navigationGroup = 'Разное';
     protected static ?string $slug = 'page-policy';
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 13;
 
     protected static string $view = 'filament.pages.page-policy';
 

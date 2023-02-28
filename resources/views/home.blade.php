@@ -313,127 +313,24 @@
                     <div class="title-h2__content">Наши <br/><span>клиенты</span></div>
                 </h2>
                 <div data-spollers class="clients__body">
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/1.webp" type="image/webp">
-                                    <img src="img/partners/1.png" alt="Аист"/></picture>
+                    @foreach($clients as $client)
+                        <div animate class="clients__item">
+                            <div data-spoller class="clients__inner">
+                                <div class="clients__logo">
+                                    <picture>
+                                        <source
+                                            srcset="{{ $client->getFirstMedia('clients')->getUrl('clientWebp') }} 1x, {{ $client->getFirstMedia('clients')->getUrl('clientWebp@2') }} 2x"
+                                            type="image/webp">
+                                        <img src="{{ $client->getFirstMedia('clients')->getUrl('client') }}"
+                                             srcset="{{ $client->getFirstMedia('clients')->getUrl('clientWebp') }} 1x, {{ $client->getFirstMedia('clients')->getUrl('clientWebp@2') }} 2x"
+                                             alt="Логотип"/></picture>
+                                </div>
                             </div>
+                            <p class="clients__text">
+                                {{ $client->text }}
+                            </p>
                         </div>
-                        <p class="clients__text">
-                            «Аист» — одно из ведущих предприятий – производителей бытовой химии в России. С
-                            самого начала деятельности предприятия главная цель заключалась в производстве и
-                            продаже высококачественных стиральных порошков, отбеливателей, моющих и чистящих
-                            средств, мыла хозяйственного.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/2.webp" type="image/webp">
-                                    <img src="img/partners/2.png" alt="Балтимор"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            «Балтимор» – один из крупнейших производителей кетчупов, соусов и горчицы. Для
-                            многих россиян слово кетчуп ассоциируется со словом «Балтимор». Такой сильной
-                            ассоциации продукта и торговой марки компания «Балтимор» достигла менее чем за 10
-                            лет своего развития.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/3.webp" type="image/webp">
-                                    <img src="img/partners/3.png" alt="Митрофан Лагидзе"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            Тихвинский лимонадный завод «Воды Лагидзе» с уверенностью можно назвать одним из
-                            самых современных и технически оснащенных заводов мира. Сочетание высоких технологий
-                            с соблюдением традиций качества и уникальной рецептуры Митрофана Лагидзе позволяют
-                            заводу полностью отказаться от консервантов и химических добавок в производстве
-                            напитков и сиропов.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/4.webp" type="image/webp">
-                                    <img src="img/partners/4.png" alt="Гороховецкая мануфактура"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            «Гороховецкая мануфактура» производит кондитерские изделия и зерновые продукты под
-                            ТМ «Leti». Богатый опыт производства мучных изделий, который компания имеет за
-                            плечами, позволяет экспериментировать с рецептурами, создавая новые, оригинальные
-                            продукты.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/5.webp" type="image/webp">
-                                    <img src="img/partners/5.png" alt="Невская косметика"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            «Невская Косметика» — российский производитель косметической и парфюмерной
-                            продукции, расположенный в Санкт-Петербурге. На сегодняшний день входит в тройку
-                            сильнейших компаний-производителей косметики на российском рынке.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/6.webp" type="image/webp">
-                                    <img src="img/partners/6.png" alt="Птицефабрика островная"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            Птицефабрика «Островная» — одно из крупнейших птицеводческих хозяйств страны. Входит
-                            в рейтинг «300 лучших сельскохозяйственных предприятий России». Предприятие
-                            специализируется на производстве диетических продуктов питания — яичной и мясной
-                            продукции.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/7.webp" type="image/webp">
-                                    <img src="img/partners/7.png" alt="Пискаревский молочный завод"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            «Пискаревский молочный завод» — это одно из ведущих производств молока и молочных
-                            продуктов Северо-запада. Кисломолочная продукция представлена широким ассортиментом:
-                            сливки, кефир, сметана, ряженка, йогурты и др. Богатый опыт и накопленные знания
-                            позволяют продавать молочные продукты оптом, которые отвечают всем гигиеническим
-                            номам и вкусовым пристрастиям потребителя.
-                        </p>
-                    </div>
-                    <div animate class="clients__item">
-                        <div data-spoller class="clients__inner">
-                            <div class="clients__logo">
-                                <picture>
-                                    <source srcset="img/partners/8.webp" type="image/webp">
-                                    <img src="img/partners/8.png" alt="Exprof"/></picture>
-                            </div>
-                        </div>
-                        <p class="clients__text">
-                            Exprof — одна из самых крупных компаний в России по производству оконных профилей.
-                            Это современный автоматизированный промышленный комплекс, который выпускает более
-                            сорока тысяч тонн продукции в год. Компания начала выпускать профиль для окон ПВХ в
-                            2001 году и за короткое время сумела войти в пятерку лидеров рынка.
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

@@ -102,14 +102,14 @@
                         <button type="submit" class="form__button button">Отправить</button>
                         <div class="form__policy">
                             Нажимая на кнопку вы соглашаетесь на обработку
-                            <a href="/policy.html">персональных данных</a>
+                            <a href="{{ route('policy') }}">персональных данных</a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         <div class="footer__bottom bottom-footer">
-            <a href="/" class="bottom-footer__logo">
+            <a href="{{ route('home') }}" class="bottom-footer__logo">
                 <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M28.4605 53.2385C28.4605 56.9732 25.433 60 21.699 60C17.965 60 14.9375 56.9732 14.9375 53.2385C14.9375 49.5045 17.965 46.477 21.699 46.477C25.433 46.477 28.4605 49.5045 28.4605 53.2385Z"
@@ -161,15 +161,17 @@
                             <a href="{{ route('products.index') }}" class="footer-menu__link">Оборудование</a>
                         </li>
                         <li class="footer-menu__item">
-                            <a href="/solutions.html" class="footer-menu__link">Решения</a>
+                            <a href="{{ route('solutions.index') }}" class="footer-menu__link">Решения</a>
                         </li>
-                        <li class="footer-menu__item"><a href="/service.html" class="footer-menu__link">Сервис</a></li>
-                        <li class="footer-menu__item">
-                            <a href="/about.html" class="footer-menu__link">О компании</a>
+                        <li class="footer-menu__item"><a href="{{ route('service.index') }}" class="footer-menu__link">Сервис</a>
                         </li>
-                        <li class="footer-menu__item"><a href="/blog.html" class="footer-menu__link">Блог</a></li>
                         <li class="footer-menu__item">
-                            <a href="/contacts.html" class="footer-menu__link">Контакты</a>
+                            <a href="{{ route('about.index') }}" class="footer-menu__link">О компании</a>
+                        </li>
+                        <li class="footer-menu__item"><a href="{{ route('blog.index') }}"
+                                                         class="footer-menu__link">Блог</a></li>
+                        <li class="footer-menu__item">
+                            <a href="{{ route('contacts') }}" class="footer-menu__link">Контакты</a>
                         </li>
                     </ul>
                 </nav>

@@ -2,16 +2,12 @@
 
 namespace App\Filament\Pages;
 
-use App\Models\About;
 use App\Models\Contact;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\Page;
 use Filament\Forms;
-use Filament\Resources\Form;
 
 class PageContacts extends Page implements Forms\Contracts\HasForms
 {
@@ -43,7 +39,14 @@ class PageContacts extends Page implements Forms\Contracts\HasForms
             ]);
         } else {
             Contact::create([
-                'article' => '',
+                'address' => '',
+                'email' => '',
+                'phone' => '',
+                'schedule' => '',
+                'vk' => '',
+                'telegram' => '',
+                'whatsapp' => '',
+                'unit' => [],
             ]);
         }
     }

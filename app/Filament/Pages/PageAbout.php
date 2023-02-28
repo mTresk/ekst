@@ -8,7 +8,6 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Pages\Page;
 use Filament\Forms;
-use Filament\Resources\Form;
 
 class PageAbout extends Page implements Forms\Contracts\HasForms
 {

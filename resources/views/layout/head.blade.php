@@ -30,5 +30,6 @@
     <meta property="og:image" content="@yield('ogImage', url('img/og_image.png'))"/>
 
     @vite('resources/js/app.js')
+    @vite('resources/js/vue.js')
     @stack('head')
 </head>

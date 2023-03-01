@@ -486,7 +486,7 @@
                     @foreach($videos as $video)
                         <div animate class="video__item">
                             <div class="video__image">
-                                <img src="" alt=""/>
+                                <img src="#" alt="Обложка"/>
                             </div>
                             <button data-popup="#youtube" data-popup-youtube="{{ $video }}" aria-label="Проиграть"
                                     class="video__button">

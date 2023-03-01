@@ -17,7 +17,7 @@ class AboutController extends Controller
         $history = History::all();
         $numbers = Number::all();
         $advantages = Advantage::all();
-        $reviews = Review::all();
+        $reviews = Review::published()->get();
         $documents = Document::all();
         $about = About::first();
 

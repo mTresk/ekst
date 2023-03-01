@@ -504,7 +504,6 @@
                 content: counter(liCounter) '.';
                 position: absolute;
                 left: -20px;
-                font-weight: 500;
                 color: $accentColor;
                 font-weight: 300;
 
@@ -516,6 +515,9 @@
 
 //========================================================================================================================================================
 .form {
+    position: relative;
+    max-width: rem(400);
+
     &--dark {
         .form__input {
             input {
@@ -530,6 +532,10 @@
 
         .form__policy {
             color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form__success {
+            color: $whiteColor;
         }
     }
 
@@ -581,14 +587,13 @@
         margin-top: rem(30);
         display: flex;
         align-items: center;
-        gap: rem(25);
+        gap: rem(17);
     }
 
     // .form__policy
     &__policy {
         font-weight: 300;
         line-height: 120%;
-        text-align: center;
         color: rgba(55, 53, 53, 0.7);
 
         @include adaptiveValue('font-size', 11, 8);
@@ -603,6 +608,34 @@
                 }
             }
         }
+    }
+
+    &__error {
+        color: red;
+        margin-top: rem(5);
+
+        @include adaptiveValue('font-size', 11, 9);
+    }
+
+    &__success {
+        margin-top: rem(20);
+        color: $mainColor;
+
+        @include adaptiveValue('font-size', 18, 16);
+    }
+}
+
+.thanks {
+    &__title {
+        font-weight: 500;
+        line-height: 120%;
+
+        @include adaptiveValue('font-size', 25, 18);
+        @include adaptiveValue('margin-bottom', 15, 10);
+    }
+
+    &__text {
+        @include adaptiveValue('font-size', 16, 14);
     }
 }
 

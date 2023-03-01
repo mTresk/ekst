@@ -3,9 +3,11 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SolutionsController;
 use App\Http\Livewire\Blog;
@@ -29,3 +31,6 @@ Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 
 Route::get('/policy', [PolicyController::class, 'index'])->name('policy');
+
+Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedback');
+Route::post('/review', [ReviewController::class, 'review'])->name('review');

@@ -86,27 +86,9 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" class="top-footer__form form form--dark">
-                    <div class="form__input">
-                        <input autocomplete="off" type="text" name="name" placeholder="Ваше имя*"/>
-                    </div>
-                    <div class="form__input">
-                        <input autocomplete="off" type="text" name="phone" placeholder="Номер телефона*"/>
-                    </div>
-                    <div class="form__input">
-                        <input autocomplete="off" type="text" name="email" placeholder="Email"/>
-                    </div>
-                    <div class="form__input">
-                        <input autocomplete="off" type="text" name="message" placeholder="Сообщение*"/>
-                    </div>
-                    <div class="form__footer">
-                        <button type="submit" class="form__button button">Отправить</button>
-                        <div class="form__policy">
-                            Нажимая на кнопку вы соглашаетесь на обработку
-                            <a href="{{ route('policy') }}">персональных данных</a>
-                        </div>
-                    </div>
-                </form>
+                <div id="footer-form">
+                    <component-footer-form/>
+                </div>
             </div>
         </div>
         <div class="footer__bottom bottom-footer">

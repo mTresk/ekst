@@ -1,144 +1,163 @@
 .contacts-header {
-	position: relative;
+    position: relative;
 
-	@include adaptiveValue('padding-top', 120, 100);
-	@include adaptiveValue('padding-bottom', 70, 35);
-	// .contacts-header__background
-	&__background {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
-		z-index: -1;
-		filter: brightness(0.4);
-	}
-	// .contacts-header__breadcrumb
-	&__breadcrumb {
-		@include adaptiveValue('margin-bottom', 10, 35);
-	}
-	// .contacts-header__title
-	&__title {
-		font-family: 'DIN Next Shapes Dots', sans-serif;
-		line-height: 98%;
-		text-align: center;
-		text-transform: uppercase;
-		color: $whiteColor;
+    @include adaptiveValue('padding-top', 120, 100);
+    @include adaptiveValue('padding-bottom', 70, 35);
+    // .contacts-header__background
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.4);
+    }
 
-		@include adaptiveValue('font-size', 90, 45);
-	}
+    // .contacts-header__breadcrumb
+    &__breadcrumb {
+        @include adaptiveValue('margin-bottom', 10, 35);
+    }
+
+    // .contacts-header__title
+    &__title {
+        font-family: 'DIN Next Shapes Dots', sans-serif;
+        line-height: 98%;
+        text-align: center;
+        text-transform: uppercase;
+        color: $whiteColor;
+
+        @include adaptiveValue('font-size', 90, 45);
+    }
 }
+
 //========================================================================================================================================================
 .contacts {
-	padding-top: rem(50);
+    padding-top: rem(50);
 
-	@include adaptiveValue('padding-bottom', 100, 50);
-	// .contacts__body
-	&__body {
-		display: flex;
-		justify-content: space-between;
-		gap: rem(25);
+    @include adaptiveValue('padding-bottom', 100, 50);
 
-		@media (max-width: $tablet) {
-			flex-direction: column;
-		}
-	}
-	// .contacts__content
-	&__content {
-		flex: 0 1 rem(750);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+    &__wrapper {
+        position: relative;
+        max-width: rem(400);
+    }
 
-		@include adaptiveValue('gap', 50, 25);
+    // .contacts__body
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(25);
 
-		@media (max-width: $tablet) {
-			flex: 1 1 auto;
-		}
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
 
-		@media (max-width: $mobileSmall) {
-			grid-template-columns: 1fr;
-		}
-	}
-	// .contacts__subtitle
-	&__subtitle {
-		font-weight: 500;
-		line-height: 120%;
+    // .contacts__content
+    &__content {
+        flex: 0 1 rem(750);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-		@include adaptiveValue('font-size', 25, 18);
-		@include adaptiveValue('margin-bottom', 15, 10);
-	}
-	// .contacts__item
-	&__item {
-		@include adaptiveValue('margin-bottom', 15, 10);
-	}
-	// .contacts__label
-	&__label {
-		font-weight: 300;
-		line-height: 110%;
-		color: rgba(55, 53, 53, 0.7);
-		margin-bottom: rem(7);
+        @include adaptiveValue('gap', 50, 25);
 
-		@include adaptiveValue('font-size', 16, 12);
-		@include adaptiveValue('margin-bottom', 7, 5);
-	}
-	// .contacts__info
-	&__info {
-		font-weight: 300;
-		font-size: 18px;
-		line-height: 120%;
-		transition: color 0.3s ease-in-out;
+        @media (max-width: $tablet) {
+            flex: 1 1 auto;
+        }
 
-		@include adaptiveValue('font-size', 18, 14);
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr;
+        }
+    }
 
-		&:link {
-			@media (any-hover: hover) {
-				&:hover {
-					color: $accentColor;
-				}
-			}
-		}
-	}
-	// .contacts__form
-	&__form {
-		flex: 0 1 rem(400);
+    // .contacts__subtitle
+    &__subtitle {
+        font-weight: 500;
+        line-height: 120%;
 
-		@media (max-width: $tablet) {
-			flex: 1 1 auto;
-			max-width: rem(400);
-		}
-	}
+        @include adaptiveValue('font-size', 25, 18);
+        @include adaptiveValue('margin-bottom', 15, 10);
+    }
+
+    // .contacts__item
+    &__item {
+        @include adaptiveValue('margin-bottom', 15, 10);
+    }
+
+    // .contacts__label
+    &__label {
+        font-weight: 300;
+        line-height: 110%;
+        color: rgba(55, 53, 53, 0.7);
+        margin-bottom: rem(7);
+
+        @include adaptiveValue('font-size', 16, 12);
+        @include adaptiveValue('margin-bottom', 7, 5);
+    }
+
+    // .contacts__info
+    &__info {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 120%;
+        transition: color 0.3s ease-in-out;
+
+        @include adaptiveValue('font-size', 18, 14);
+
+        &:link {
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $accentColor;
+                }
+            }
+        }
+    }
+
+    // .contacts__form
+    &__form {
+        flex: 0 1 rem(400);
+
+        @media (max-width: $tablet) {
+            flex: 1 1 auto;
+            max-width: rem(400);
+        }
+    }
 }
 
 //========================================================================================================================================================
 .map {
-	// .map__title
-	&__title {
-		@include adaptiveValue('margin-bottom', 50, 25);
-	}
-	// .map__map
-	&__map {
-		height: 500px;
+    // .map__title
+    &__title {
+        @include adaptiveValue('margin-bottom', 50, 25);
+    }
 
-		[class*='copyright__wrap'] {
-			display: none !important;
-		}
-		[class*='copyrights-promo'] {
-			display: none !important;
-		}
-		[class*='gototech'] {
-			display: none !important;
-		}
-	}
-	&__unit {
-		display: none;
-	}
+    // .map__map
+    &__map {
+        height: 500px;
 
-	&__link {
-		@media (any-hover: hover) {
-			&:hover {
-				color: $hoverColor;
-			}
-		}
-	}
+        [class*='copyright__wrap'] {
+            display: none !important;
+        }
+
+        [class*='copyrights-promo'] {
+            display: none !important;
+        }
+
+        [class*='gototech'] {
+            display: none !important;
+        }
+    }
+
+    &__unit {
+        display: none;
+    }
+
+    &__link {
+        @media (any-hover: hover) {
+            &:hover {
+                color: $hoverColor;
+            }
+        }
+    }
 }

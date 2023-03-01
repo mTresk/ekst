@@ -1,247 +1,274 @@
 .footer {
-	position: relative;
-	background-color: $mainColor;
-	color: $whiteColor;
-	// .footer__top
-	&__top {
-		@include adaptiveValue('padding-top', 70, 50);
-	}
-	// .footer__basement
-	&__basement {
-		display: flex;
-		justify-content: space-between;
-		@include adaptiveValue('padding-bottom', 50, 30);
+    position: relative;
+    background-color: $mainColor;
+    color: $whiteColor;
+    // .footer__top
+    &__top {
+        @include adaptiveValue('padding-top', 70, 50);
+    }
 
-		@media (max-width: $mobileSmall) {
-			flex-direction: column;
-			gap: rem(10);
-			align-items: center;
-		}
-	}
-	// .footer__copyright
-	&__copyright {
-		font-weight: 300;
-		line-height: 110%;
-		color: rgba(255, 255, 255, 0.7);
+    // .footer__basement
+    &__basement {
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveValue('padding-bottom', 50, 30);
 
-		@include adaptiveValue('font-size', 14, 11);
+        @media (max-width: $mobileSmall) {
+            flex-direction: column;
+            gap: rem(10);
+            align-items: center;
+        }
+    }
 
-		@media (max-width: $mobileSmall) {
-			text-align: center;
-		}
-	}
-	// .footer__developer
-	&__developer {
-		font-weight: 300;
-		line-height: 110%;
-		color: rgba(255, 255, 255, 0.7);
+    // .footer__copyright
+    &__copyright {
+        font-weight: 300;
+        line-height: 110%;
+        color: rgba(255, 255, 255, 0.7);
 
-		@include adaptiveValue('font-size', 14, 11);
+        @include adaptiveValue('font-size', 14, 11);
 
-		a {
-			color: $accentColor;
-			transition: color 0.3s ease-in-out;
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
+    }
 
-			@media (any-hover: hover) {
-				&:hover {
-					color: $hoverColor;
-				}
-			}
-		}
+    // .footer__developer
+    &__developer {
+        font-weight: 300;
+        line-height: 110%;
+        color: rgba(255, 255, 255, 0.7);
 
-		@media (max-width: $mobileSmall) {
-			text-align: center;
-		}
-	}
+        @include adaptiveValue('font-size', 14, 11);
+
+        a {
+            color: $accentColor;
+            transition: color 0.3s ease-in-out;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $hoverColor;
+                }
+            }
+        }
+
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
+    }
 }
+
 .top-footer {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-	@include adaptiveValue('padding-bottom', 60, 20);
-	// .top-footer__title
-	&__title {
-		@include adaptiveValue('margin-bottom', 50, 25);
-	}
-	// .top-footer__body
-	&__body {
-		display: flex;
-		align-items: center;
+    @include adaptiveValue('padding-bottom', 60, 20);
 
-		@media (max-width: $mobile) {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: rem(30);
-		}
-	}
-	// .top-footer__content
-	&__content {
-		border-right: 1px solid rgba(255, 255, 255, 0.2);
+    &__wrapper {
+        position: relative;
+        max-width: rem(400);
+    }
 
-		@include adaptiveValue('padding-right', 70, 30, 0, 1440, 767);
+    // .top-footer__title
+    &__title {
+        @include adaptiveValue('margin-bottom', 50, 25);
+    }
 
-		@media (max-width: $mobile) {
-			padding: 0 !important;
-			border: none;
-		}
-	}
-	// .top-footer__block
-	&__block {
-		&:not(:last-child) {
-			@include adaptiveValue('margin-bottom', 20, 15);
-		}
-	}
-	// .top-footer__label
-	&__label {
-		font-weight: 300;
-		line-height: 110%;
-		color: rgba(255, 255, 255, 0.7);
-		margin-bottom: rem(10);
+    // .top-footer__body
+    &__body {
+        display: flex;
+        align-items: center;
 
-		@include adaptiveValue('font-size', 18, 13);
-	}
-	// .top-footer__address
-	&__address {
-		font-weight: 300;
-		line-height: 110%;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: rem(30);
+        }
+    }
 
-		@include adaptiveValue('font-size', 25, 18);
-	}
-	// .top-footer__email
-	&__email {
-		font-weight: 300;
-		line-height: 110%;
-		transition: color 0.3s ease-in-out;
+    // .top-footer__content
+    &__content {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
 
-		@include adaptiveValue('font-size', 25, 18);
+        @include adaptiveValue('padding-right', 70, 30, 0, 1440, 767);
 
-		@media (any-hover: hover) {
-			&:hover {
-				color: $accentColor;
-			}
-		}
-	}
-	// .top-footer__phone
-	&__phone {
-		font-weight: 300;
-		line-height: 110%;
-		transition: color 0.3s ease-in-out;
+        @media (max-width: $mobile) {
+            padding: 0 !important;
+            border: none;
+        }
+    }
 
-		@include adaptiveValue('font-size', 25, 18);
+    // .top-footer__block
+    &__block {
+        &:not(:last-child) {
+            @include adaptiveValue('margin-bottom', 20, 15);
+        }
+    }
 
-		@media (any-hover: hover) {
-			&:hover {
-				color: $accentColor;
-			}
-		}
-	}
-	// .top-footer__schedule
-	&__schedule {
-		font-weight: 300;
-		line-height: 110%;
+    // .top-footer__label
+    &__label {
+        font-weight: 300;
+        line-height: 110%;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: rem(10);
 
-		@include adaptiveValue('font-size', 25, 18);
-	}
-	// .top-footer__socials
-	&__socials {
-		display: flex;
-		align-items: center;
-		gap: rem(15);
-	}
-	// .top-footer__social
-	&__social {
-		svg {
-			@include adaptiveValue('max-width', 30, 25);
-			path {
-				transition: fill 0.3s ease-in-out;
-				fill: $whiteColor;
-			}
-			circle {
-				transition: stroke 0.3s ease-in-out;
-				stroke: $whiteColor;
-			}
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				svg {
-					path {
-						fill: $accentColor;
-					}
-					circle {
-						stroke: $accentColor;
-					}
-				}
-			}
-		}
-	}
-	// .top-footer__form
-	&__form {
-		flex: 0 1 rem(400);
-		@include adaptiveValue('margin-left', 70, 30, 0, 1440, 767);
+        @include adaptiveValue('font-size', 18, 13);
+    }
 
-		@media (max-width: $mobile) {
-			margin: 0 !important;
-			flex: 1 1 auto;
-		}
-	}
+    // .top-footer__address
+    &__address {
+        font-weight: 300;
+        line-height: 110%;
+
+        @include adaptiveValue('font-size', 25, 18);
+    }
+
+    // .top-footer__email
+    &__email {
+        font-weight: 300;
+        line-height: 110%;
+        transition: color 0.3s ease-in-out;
+
+        @include adaptiveValue('font-size', 25, 18);
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accentColor;
+            }
+        }
+    }
+
+    // .top-footer__phone
+    &__phone {
+        font-weight: 300;
+        line-height: 110%;
+        transition: color 0.3s ease-in-out;
+
+        @include adaptiveValue('font-size', 25, 18);
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accentColor;
+            }
+        }
+    }
+
+    // .top-footer__schedule
+    &__schedule {
+        font-weight: 300;
+        line-height: 110%;
+
+        @include adaptiveValue('font-size', 25, 18);
+    }
+
+    // .top-footer__socials
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+    }
+
+    // .top-footer__social
+    &__social {
+        svg {
+            @include adaptiveValue('max-width', 30, 25);
+
+            path {
+                transition: fill 0.3s ease-in-out;
+                fill: $whiteColor;
+            }
+
+            circle {
+                transition: stroke 0.3s ease-in-out;
+                stroke: $whiteColor;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    path {
+                        fill: $accentColor;
+                    }
+
+                    circle {
+                        stroke: $accentColor;
+                    }
+                }
+            }
+        }
+    }
+
+    // .top-footer__form
+    &__form {
+        flex: 0 1 rem(400);
+        @include adaptiveValue('margin-left', 70, 30, 0, 1440, 767);
+
+        @media (max-width: $mobile) {
+            margin: 0 !important;
+            flex: 1 1 auto;
+        }
+    }
 }
 
 .bottom-footer {
-	padding-bottom: rem(30);
-	display: flex;
-	justify-content: space-between;
+    padding-bottom: rem(30);
+    display: flex;
+    justify-content: space-between;
 
-	@include adaptiveValue('padding-top', 60, 30);
-	@include adaptiveValue('padding-bottom', 30, 15);
+    @include adaptiveValue('padding-top', 60, 30);
+    @include adaptiveValue('padding-bottom', 30, 15);
 
-	@media (max-width: $mobileSmall) {
-		justify-content: center;
-	}
-	// .bottom-footer__logo
-	&__logo {
-		svg {
-			@include adaptiveValue('max-width', 220, 150);
-		}
-	}
+    @media (max-width: $mobileSmall) {
+        justify-content: center;
+    }
+    // .bottom-footer__logo
+    &__logo {
+        svg {
+            @include adaptiveValue('max-width', 220, 150);
+        }
+    }
 }
+
 .footer-menu {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 
-	@media (max-width: $mobile) {
-		display: none;
-	}
-	// .footer-menu__list
-	&__list {
-		display: flex;
-		align-items: center;
-		gap: rem(25);
-	}
-	// .footer-menu__link
-	&__link {
-		position: relative;
-		line-height: 120%;
+    @media (max-width: $mobile) {
+        display: none;
+    }
+    // .footer-menu__list
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(25);
+    }
 
-		@include adaptiveValue('font-size', 18, 14, 0, 1440, 767);
+    // .footer-menu__link
+    &__link {
+        position: relative;
+        line-height: 120%;
 
-		&::after {
-			position: absolute;
-			bottom: rem(-8);
-			left: 50%;
-			display: block;
-			width: 0;
-			height: rem(3);
-			content: '';
-			background: $accentColor;
-			transition: width 0.3s ease-in-out 0s, left 0.5s ease 0s;
-		}
+        @include adaptiveValue('font-size', 18, 14, 0, 1440, 767);
 
-		@media (any-hover: hover) {
-			&:hover {
-				&::after {
-					left: 0;
-					width: 45%;
-				}
-			}
-		}
-	}
+        &::after {
+            position: absolute;
+            bottom: rem(-8);
+            left: 50%;
+            display: block;
+            width: 0;
+            height: rem(3);
+            content: '';
+            background: $accentColor;
+            transition: width 0.3s ease-in-out 0s, left 0.5s ease 0s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 45%;
+                }
+            }
+        }
+    }
 }

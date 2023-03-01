@@ -46,56 +46,44 @@ const handleSubmit = () => {
 </script>
 
 <template>
-    <form :class="{disabled: isSending}" @submit.prevent="handleSubmit" class="top-footer__form form form--dark">
+    <div class="top-footer__wrapper">
         <div v-if="isSending" class="spinner"></div>
-        <div class="form__input">
-            <input v-model="payload.name" autocomplete="off" type="text" name="name"
-                   placeholder="Ваше имя*"/>
-            <div v-if="errors.name" class="form__error">{{ errors.name[0] }}</div>
-        </div>
-        <div class="form__input">
-            <input v-model="payload.phone" autocomplete="off" type="text" name="phone"
-                   placeholder="Номер телефона*"/>
-            <div v-if="errors.phone" class="form__error">{{ errors.phone[0] }}</div>
-        </div>
-        <div class="form__input">
-            <input v-model="payload.email" autocomplete="off" type="text" name="email" placeholder="Email"/>
-        </div>
-        <div v-if="errors.email" class="form__error">{{ errors.email[0] }}</div>
-        <div class="form__input">
-            <input v-model="payload.message" autocomplete="off" type="text" name="message"
-                   placeholder="Сообщение*"/>
-            <div v-if="errors.message" class="form__error">{{ errors.message[0] }}</div>
-        </div>
-        <div class="form__footer">
-            <button type="submit" class="form__button button">Отправить</button>
-            <div class="form__policy">
-                Нажимая на кнопку вы соглашаетесь на обработку
-                <a href="/policy">персональных данных</a>
+        <form :class="{disabled: isSending}" @submit.prevent="handleSubmit" class="top-footer__form form form--dark">
+            <div class="form__input">
+                <input v-model="payload.name" autocomplete="off" type="text" name="name"
+                       placeholder="Ваше имя*"/>
+                <div v-if="errors.name" class="form__error">{{ errors.name[0] }}</div>
             </div>
-        </div>
-        <div v-if="isSuccess" class="form__success">Спасибо, скоро мы свяжемся с Вами!</div>
-    </form>
+            <div class="form__input">
+                <input v-model="payload.phone" autocomplete="off" type="text" name="phone"
+                       placeholder="Номер телефона*"/>
+                <div v-if="errors.phone" class="form__error">{{ errors.phone[0] }}</div>
+            </div>
+            <div class="form__input">
+                <input v-model="payload.email" autocomplete="off" type="text" name="email" placeholder="Email"/>
+            </div>
+            <div v-if="errors.email" class="form__error">{{ errors.email[0] }}</div>
+            <div class="form__input">
+                <input v-model="payload.message" autocomplete="off" type="text" name="message"
+                       placeholder="Сообщение*"/>
+                <div v-if="errors.message" class="form__error">{{ errors.message[0] }}</div>
+            </div>
+            <div class="form__footer">
+                <button type="submit" class="form__button button">Отправить</button>
+                <div class="form__policy">
+                    Нажимая на кнопку вы соглашаетесь на обработку
+                    <a href="/policy">персональных данных</a>
+                </div>
+            </div>
+            <div v-if="isSuccess" class="form__success">Спасибо, скоро мы свяжемся с Вами!</div>
+        </form>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 .disabled {
     pointer-events: none;
-
-    &::before {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #0d0a0a;
-        opacity: 0.2;
-        content: '';
-        border-radius: 6px;
-    }
 }
-
 
 .spinner {
     position: absolute;

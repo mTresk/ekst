@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReviewRequest;
-use App\Models\Feedback;
+use App\Mail\ReviewReceived;
 use App\Models\Review;
+use Illuminate\Support\Facades\Mail;
 
 class ReviewController extends Controller
 {
@@ -16,10 +17,9 @@ class ReviewController extends Controller
             Review::create($formData);
         }
 
-//        foreach ([config('mail.admin_email'), config('mail.manager_email')] as $recipient) {
-//            Mail::to($recipient)->send(new CallbackForm($formData));
-//        }
-
+        foreach ([config('mail.admin_email'), config('mail.manager_email')] as $recipient) {
+            Mail::to($recipient)->send(new ReviewReceived($formData));
+        }
         return response()->json('Спасибо за сообщение!');
     }
 }

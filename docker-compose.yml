@@ -30,11 +30,11 @@ services:
         container_name: ekst_server
         restart: always
         labels:
-            - "traefik.http.routers.ekst_server.rule=Host(`ekst.maximtresk.ru`)"
+            - "traefik.http.routers.ekst_server.rule=Host(`testdomain.ru`)"
             - "traefik.port=80"
             - "traefik.docker.network=web"
-            - "traefik.http.routers.ekst_server.entrypoints=websecure"
-            - "traefik.http.routers.ekst_server.tls.certresolver=myresolver"
+        #            - "traefik.http.routers.ekst_server.entrypoints=websecure"
+        #            - "traefik.http.routers.ekst_server.tls.certresolver=myresolver"
         networks:
             - web
             - internal

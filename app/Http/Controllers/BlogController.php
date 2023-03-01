@@ -11,9 +11,8 @@ class BlogController extends Controller
         return view('blog');
     }
 
-    public function show($slug, Article $article)
+    public function show(Article $article)
     {
-        $article = $article->where('slug', $slug)->firstOrFail();
         $otherArticles = $article->whereNot('id', $article->id)->get()->take(5);
 
         $previous = $article::where('published_at', '<', $article->published_at)->orderBy('published_at', 'desc')->first();

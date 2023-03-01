@@ -70,7 +70,7 @@
                         </div>
                         <div class="post__links">
                             @isset($previous->slug)
-                                <a href="{{ route('blog.show', ['slug' => $previous->slug]) }}"
+                                <a href="{{ route('blog.show', ['article' => $previous->slug]) }}"
                                    class="post__link link link--light post__link--previous">
                                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@
                                 </a>
                             @endisset
                             @isset($next->slug)
-                                <a href="{{ route('blog.show', ['slug' => $next->slug]) }}"
+                                <a href="{{ route('blog.show', ['article' => $next->slug]) }}"
                                    class="post__link link link--light post__link--next">
                                     <span>Следующая статья</span>
                                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none"

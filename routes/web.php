@@ -15,16 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 
 Route::get('/solutions', [SolutionsController::class, 'index'])->name('solutions.index');
-Route::get('/solutions/{slug}', [SolutionsController::class, 'show'])->name('solutions.show');
+Route::get('/solutions/{industry:slug}', [SolutionsController::class, 'show'])->name('solutions.show');
 
 Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
-Route::get('/service/{slug}', [ServiceController::class, 'show'])->name('service.show');
+Route::get('/service/{program:slug}', [ServiceController::class, 'show'])->name('service.show');
 
 Route::get('/blog', Blog::class)->name('blog.index');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{article:slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 

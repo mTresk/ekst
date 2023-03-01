@@ -15,9 +15,8 @@ class SolutionsController extends Controller
         return view('solutions', compact('industries', 'areas'));
     }
 
-    public function show($slug, Industry $industry)
+    public function show(Industry $industry)
     {
-        $industry = $industry->where('slug', $slug)->firstOrFail();
         $otherIndustries = $industry->whereNot('id', $industry->id)->get();
 
         return view('solution', compact('industry', 'otherIndustries'));

@@ -17,10 +17,8 @@ class ServiceController extends Controller
         return view('service', compact('parts', 'liquids', 'programs'));
     }
 
-    public function show($slug, Program $program)
+    public function show(Program $program)
     {
-        $program = $program->where('slug', $slug)->firstOrFail();
-
         return view('program', compact('program'));
     }
 }

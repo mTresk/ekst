@@ -14,13 +14,11 @@ class ProductController extends Controller
         return view('products', compact('printers', 'extraProducts'));
     }
 
-    public function show($slug, Product $product)
+    public function show(Product $product)
     {
-        $product = $product->where('slug', $slug)->firstOrFail();
         $otherProducts = $product->whereNot('id', $product->id)->get();
 
         $videoLink = null;
-
         if ($product->video) {
             preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $product->video, $match);
             $videoLink = $match[1];

@@ -8,10 +8,11 @@ use App\Models\Client;
 use App\Models\Number;
 use App\Models\Product;
 use App\Models\Video;
+use App\Services\YoutubeLinkService;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(YoutubeLinkService $service)
     {
         $printers = Product::where('product_category_id', '1')->get();
         $articles = Article::orderBy('published_at', 'DESC')->get()->take(3);
@@ -23,10 +24,8 @@ class HomeController extends Controller
         $videos = [];
 
         foreach ($videoLinks as $link) {
-            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $link->url, $match);
-            $videos[] = $match[1];
+            $videos[] = $service->simplifyLink($link->url);
         }
-
 
         return view('home', compact('printers', 'articles', 'numbers', 'advantages', 'clients', 'videos'));
     }

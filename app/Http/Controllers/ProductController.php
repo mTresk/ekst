@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\YoutubeLinkService;
 
 class ProductController extends Controller
 {
@@ -14,14 +15,13 @@ class ProductController extends Controller
         return view('products', compact('printers', 'extraProducts'));
     }
 
-    public function show(Product $product)
+    public function show(Product $product, YoutubeLinkService $service)
     {
         $otherProducts = $product->whereNot('id', $product->id)->get();
 
         $videoLink = null;
         if ($product->video) {
-            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $product->video, $match);
-            $videoLink = $match[1];
+            $videoLink = $service->simplifyLink($product->video);
         }
 
         return view('product', compact('product', 'otherProducts', 'videoLink'));

@@ -23,8 +23,8 @@ class ReviewResource extends Resource
     protected static ?string $modelLabel = 'Отзывы';
     protected static ?string $pluralModelLabel = 'Отзывы';
     protected static ?string $navigationLabel = 'Отзывы';
-    protected static ?int $navigationSort = 10;
-    protected static ?string $navigationGroup = 'О компании';
+    protected static ?int $navigationSort = 17;
+    protected static ?string $navigationGroup = 'Обратная связь';
 
     public static function form(Form $form): Form
     {

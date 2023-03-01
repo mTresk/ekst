@@ -16,11 +16,9 @@ class BlogController extends Controller
         $article = $article->where('slug', $slug)->firstOrFail();
         $otherArticles = $article->whereNot('id', $article->id)->get()->take(5);
 
-        $previous = $article::where('published_at', '<', $article->published_at)->max('id');
-        $next = $article::where('published_at', '>', $article->published_at)->min('id');
+        $previous = $article::where('published_at', '<', $article->published_at)->orderBy('published_at', 'desc')->first();
+        $next = $article::where('published_at', '>', $article->published_at)->orderBy('published_at')->first();
 
-        return view('article', compact('article', 'otherArticles'))
-            ->with('previous', $article::find($previous))
-            ->with('next', $article::find($next));
+        return view('article', compact('article', 'otherArticles', 'next', 'previous'));
     }
 }

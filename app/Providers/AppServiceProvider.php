@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Models\Contact;
 use Filament\Facades\Filament;
+use Filament\Navigation\UserMenuItem;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use JeffGreco13\FilamentBreezy\Pages\MyProfile;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
 
         Filament::serving(function () {
             Filament::registerViteTheme('resources/scss/filament.scss');
+            Filament::registerUserMenuItems([
+                'account' => UserMenuItem::make()->url(MyProfile::getUrl()),
+            ]);
         });
     }
 }

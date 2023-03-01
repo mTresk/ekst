@@ -19,7 +19,7 @@
                         {{ $industry->name }}
                     </li>
                 </ul>
-                <h1 class="industry-header__title">Табачная продукция</h1>
+                <h1 class="industry-header__title">{{ $industry->name }}</h1>
             </div>
         </section>
         <section class="industry">

@@ -15,10 +15,11 @@ class Product extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'slug', 'short_description', 'description', 'video', 'content', 'facilities', 'product_category_id'];
+    protected $fillable = ['name', 'slug', 'short_description', 'description', 'video', 'content', 'facilities', 'product_category_id', 'file'];
 
     protected $casts = [
         'facilities' => 'array',
+        'file' => 'array',
     ];
 
     public function category(): BelongsTo

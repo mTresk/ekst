@@ -73,11 +73,9 @@ class ProductResource extends Resource
                     ->label('Характеристики и функции')
                     ->schema([
                         TextInput::make('title')
-                            ->label('Заголовок')
-                            ->required(),
+                            ->label('Заголовок'),
                         RichEditor::make('content')
                             ->label('Содержимое')
-                            ->required()
                     ])
                     ->orderable()
                     ->createItemButtonLabel('Добавить блок')
@@ -101,6 +99,18 @@ class ProductResource extends Resource
                     ->panelLayout('grid')
                     ->collection('sliders')
                     ->label('Изображения в слайдере'),
+                Repeater::make('file')
+                    ->label('Файлы для скачивания')
+                    ->schema([
+                        TextInput::make('title')
+                            ->label('Название'),
+                        SpatieMediaLibraryFileUpload::make('file')
+                            ->collection('files')
+                            ->label('Файл')
+                            ->preserveFilenames(),
+                    ])
+                    ->orderable()
+                    ->createItemButtonLabel('Добавить файл'),
             ]);
     }
 

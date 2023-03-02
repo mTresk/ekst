@@ -4,10 +4,10 @@ namespace App\Filament\Pages;
 
 use App\Models\About;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Pages\Page;
 use Filament\Forms;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PageAbout extends Page implements Forms\Contracts\HasForms
 {
@@ -52,7 +52,7 @@ class PageAbout extends Page implements Forms\Contracts\HasForms
                     ->columnSpan(2),
             ]),
             Card::make([
-                RichEditor::make('article')
+                TinyEditor::make('article')
                     ->label('Статья')
                     ->required()
                     ->maxLength(65535)

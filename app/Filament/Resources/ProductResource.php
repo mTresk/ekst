@@ -7,7 +7,6 @@ use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
@@ -74,7 +73,7 @@ class ProductResource extends Resource
                     ->schema([
                         TextInput::make('title')
                             ->label('Заголовок'),
-                        RichEditor::make('content')
+                        TinyEditor::make('content')
                             ->label('Содержимое')
                     ])
                     ->orderable()

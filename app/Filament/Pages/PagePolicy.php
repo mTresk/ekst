@@ -4,9 +4,9 @@ namespace App\Filament\Pages;
 
 use App\Models\Policy;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\RichEditor;
 use Filament\Pages\Page;
 use Filament\Forms;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PagePolicy extends Page implements Forms\Contracts\HasForms
 {
@@ -42,7 +42,7 @@ class PagePolicy extends Page implements Forms\Contracts\HasForms
     {
         return [
             Card::make([
-                RichEditor::make('content')
+                TinyEditor::make('content')
                     ->label('Содержимое')
                     ->required()
                     ->maxLength(65535)

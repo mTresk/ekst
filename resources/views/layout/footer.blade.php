@@ -161,7 +161,7 @@
             </div>
         </div>
         <div class="footer__basement">
-            <div class="footer__copyright">© @php echo date( 'Y' ) @endphp. Институт электрокаплеструйных технологий
+            <div class="footer__copyright">© @php echo date( 'Y' ) @endphp Институт электрокаплеструйных технологий
             </div>
             <div class="footer__developer">Developed by <a href="https://t.me/tresk">Maxim Tresk</a></div>
         </div>

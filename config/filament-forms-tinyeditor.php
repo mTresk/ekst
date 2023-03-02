@@ -13,8 +13,8 @@ return [
     'profiles' => [
 
         'default' => [
-            'plugins' => 'advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount',
-            'toolbar' => 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
+            'plugins' => 'autoresize directionality emoticons fullscreen hr image link lists media table',
+            'toolbar' => 'undo redo removeformat | formatselect | bold italic | alignjustify alignright aligncenter alignleft | numlist bullist | blockquote table | image link | wordcount fullscreen',
             'upload_directory' => null,
         ],
 

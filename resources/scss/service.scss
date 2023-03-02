@@ -198,12 +198,24 @@
         }
     }
 
-    // .service-liquids__title
-    &__title {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(20);
+
         @include adaptiveValue('margin-bottom', 50, 25);
 
         @media (max-width: em(550)) {
             padding: 0 rem(20);
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__link {
+        @media (max-width: em(550)) {
+            align-self: flex-end;
         }
     }
 }

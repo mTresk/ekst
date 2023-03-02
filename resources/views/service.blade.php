@@ -162,7 +162,7 @@
                         </svg>
                         <div class="title-h2__content"><span>Чернила</span> <br/>и жидкости</div>
                     </h2>
-                    <a href="#" class="service-liquids__link link link--light">
+                    <a href="{{ route('consumables') }}" class="service-liquids__link link link--light">
                         <span>Подробнее</span>
                         <svg width="7" height="13" viewBox="0 0 7 13" fill="none"
                              xmlns="http://www.w3.org/2000/svg">

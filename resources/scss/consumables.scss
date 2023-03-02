@@ -1,0 +1,31 @@
+.consumables {
+	position: relative;
+
+	@include adaptiveValue('padding-top', 120, 100);
+	@include adaptiveValue('padding-bottom', 100, 50);
+	// .consumables__decor
+	&__decor {
+		position: absolute;
+		left: 50%;
+		top: rem(150);
+		transform: translateX(-50%);
+	}
+	// .consumables__breadcrumb
+	&__breadcrumb {
+		@include adaptiveValue('margin-bottom', 60, 30);
+	}
+	// .consumables__logo
+	&__logo {
+		max-width: 100%;
+
+		@include adaptiveValue('margin-bottom', 100, 50);
+	}
+	// .consumables__title
+	&__title {
+		@include adaptiveValue('margin-bottom', 50, 25);
+	}
+	// .consumables__content
+	&__content {
+		max-width: rem(900);
+	}
+}

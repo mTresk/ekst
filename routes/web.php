@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ConsumablesController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PolicyController;
@@ -22,6 +23,7 @@ Route::get('/solutions/{industry:slug}', [SolutionsController::class, 'show'])->
 
 Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
 Route::get('/service/{program:slug}', [ServiceController::class, 'show'])->name('service.show');
+Route::get('/consumables', [ConsumablesController::class, 'index'])->name('consumables');
 
 Route::get('/blog', Blog::class)->name('blog.index');
 Route::get('/blog/{article:slug}', [BlogController::class, 'show'])->name('blog.show');

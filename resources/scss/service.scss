@@ -296,6 +296,10 @@
             @include adaptiveValue('margin-bottom', 15, 10);
         }
 
+        svg {
+            flex: 0 0 rem(24)
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 color: $accentColor;

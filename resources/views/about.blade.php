@@ -128,7 +128,7 @@
                             d="M36.165 31.455C36.165 34.5673 33.6427 37.0896 30.5311 37.0896C27.4188 37.0896 24.8965 34.5673 24.8965 31.455C24.8965 28.3434 27.4188 25.821 30.5311 25.821C33.6427 25.821 36.165 28.3434 36.165 31.455Z"
                             fill="#373535"/>
                     </svg>
-                    <div class="title-h2__content"><span>История</span> <br/>комании</div>
+                    <div class="title-h2__content"><span>История</span> <br/>компании</div>
                 </h2>
                 <div class="about-history__body">
                     @foreach($history[0]['period'] as $item )

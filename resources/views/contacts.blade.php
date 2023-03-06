@@ -28,7 +28,7 @@
                                 <h3 class="contacts__subtitle">{{ $contact['name'] }}</h3>
                                 @isset($contact['address'])
                                     <div class="contacts__item">
-                                        <div class="contacts__label">Офис №1</div>
+                                        <div class="contacts__label">Адрес</div>
                                         <div class="contacts__info">
                                             {{ $contact['address'] }}
                                         </div>
